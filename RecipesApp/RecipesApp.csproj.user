@@ -7,7 +7,27 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Pages\RecipeForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\RecipeList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\RecipeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\RecipeForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\RecipeList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\RecipeView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

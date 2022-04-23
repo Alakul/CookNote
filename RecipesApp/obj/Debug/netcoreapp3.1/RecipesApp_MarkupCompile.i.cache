@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\App.xaml
-11407045341
+4-2085925572
 
-5-406610761
-192-1533232326
-MainWindow.xaml;
+131742858739
+199-538093693
+MainWindow.xaml;Pages\RecipeForm.xaml;Pages\RecipeList.xaml;Pages\RecipeView.xaml;
 
 False
 

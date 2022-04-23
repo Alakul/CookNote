@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="RecipesApp.Pages.RecipeForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RecipesApp.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Orientation="Vertical">
+
+        <Border BorderThickness="0,0,0,1" BorderBrush="Gray" Background="#f2f2f2" Grid.Row="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <Border Padding="15,10,10,10" Background="#f2f2f2">
+                    <Image x:Name="imageArrow" Source="/Images/arrowBlack.png" Height="14"  HorizontalAlignment="Left"/>
+                </Border>
+                <TextBlock VerticalAlignment="Center" FontWeight="Bold" FontSize="13" MouseDown="BackButton">DODAWANIE PRZEPISU</TextBlock>
+            </StackPanel>
+        </Border>
+
+        <TextBlock>Formularz</TextBlock>
+
+        <Label>Tytuł</Label>
+        <TextBox x:Name="title"></TextBox>
+
+        <ListView>
+            <ListViewItem>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox HorizontalAlignment="Stretch"/>
+                    <Button>Usun</Button>
+                </StackPanel>
+                
+            </ListViewItem>
+        </ListView>
+        <Button>Dodaj składnik</Button>
+        
+        <Label>Przygotowanie</Label>
+        <TextBox x:Name="method"></TextBox>
+
+        <Button Click="SaveRecipe">Dodaj przepis</Button>
+    </StackPanel>
+</UserControl>
