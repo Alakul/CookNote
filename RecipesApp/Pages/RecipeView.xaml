@@ -31,12 +31,12 @@
                     <StackPanel Orientation="Vertical" Grid.Column="0">
                         <StackPanel Style="{StaticResource stackPanel}">
                             <TextBlock x:Name="title" Style="{StaticResource textBlockHeader}">Tytuł</TextBlock>
-                            <TextBlock Style="{StaticResource textBlock}">Opis</TextBlock>
+                            <TextBlock x:Name="description" Style="{StaticResource textBlock}">Opis</TextBlock>
                         </StackPanel>
 
                         <StackPanel Style="{StaticResource stackPanel}">
                             <TextBlock Style="{StaticResource textBlockHeader}">Kategoria</TextBlock>
-                            <TextBlock Style="{StaticResource textBlock}">Kategoria</TextBlock>
+                            <TextBlock x:Name="category" Style="{StaticResource textBlock}">Kategoria</TextBlock>
                         </StackPanel>
                     </StackPanel>
 
@@ -46,10 +46,33 @@
                     
                     <StackPanel Style="{StaticResource stackPanel}" Grid.Row="1" Grid.Column="0">
                         <TextBlock Style="{StaticResource textBlockHeader}" Text="Składniki"/>
-                        <ListView>
-                            <ListViewItem>Skl 1</ListViewItem>
-                            <ListViewItem>Skl 2</ListViewItem>
-                        </ListView>
+
+                        <ItemsControl x:Name="ingredientList">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Stretch" Background="AliceBlue" Grid.Column="0">
+                                            <TextBlock Style="{StaticResource textBlock}" Padding="0,6,6,6" Text="{Binding IngredientType}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
+                                            <TextBlock Style="{StaticResource textBlock}" Padding="6,6,0,6">
+                                                <TextBlock.Text>
+                                                    <MultiBinding StringFormat="{}{0} {1}">
+                                                        <Binding Path="Amount"/>
+                                                        <Binding Path="Measurement"/>
+                                                    </MultiBinding>
+                                                </TextBlock.Text>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
                     </StackPanel>
 
                     <StackPanel Style="{StaticResource stackPanel}" Grid.Row="1" Grid.Column="1">

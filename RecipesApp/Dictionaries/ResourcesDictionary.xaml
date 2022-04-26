@@ -31,6 +31,35 @@
         <Setter Property="VerticalAlignment" Value="Center"></Setter>
     </Style>
 
+    <!-- TextBox -->
+    <Style x:Key="textBox" TargetType="{x:Type TextBox}">
+        <Setter Property="Padding" Value="2"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="border" 
+                        CornerRadius="0" 
+                        BorderBrush="#000" 
+                        BorderThickness="1" 
+                        Background="#fff">
+                        <ScrollViewer x:Name="PART_ContentHost" 
+                            Focusable="false" 
+                            HorizontalScrollBarVisibility="Hidden" 
+                            VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style BasedOn="{StaticResource textBox}" x:Key="textBoxInError" TargetType="{x:Type TextBox}">
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="true">
+                <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
     <!-- StackPanel -->
     <Style x:Key="stackPanel" TargetType="{x:Type StackPanel}">
         <Setter Property="Margin" Value="10"></Setter>

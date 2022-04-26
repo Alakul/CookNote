@@ -48,3 +48,5 @@ C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Templa
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Templates\MenuTemplate.baml
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeFormAdd.g.cs
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeFormAdd.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\RecipesApp.csproj.AssemblyReference.cache
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs

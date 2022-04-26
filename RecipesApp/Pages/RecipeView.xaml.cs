@@ -19,6 +19,8 @@ namespace RecipesApp.Pages
     /// </summary>
     public partial class RecipeView : UserControl
     {
+        List<Ingredient> ingredients;
+
         public RecipeView(Recipe obj)
         {
             InitializeComponent();
@@ -27,14 +29,16 @@ namespace RecipesApp.Pages
             mt.header.Text = "PRZEPIS";
             contentControlMenu.Content = mt;
 
-
             /*
             RecipeViewModel vm = new RecipeViewModel(obj, mt);
             DataContext = vm;
             */
-
+            ingredients = SqliteDataAccess.GetIngredients(obj.Id);
+            ingredientList.ItemsSource = ingredients;
 
             title.Text = obj.Title;
+            description.Text = obj.Description;
+            category.Text = obj.Category;
             method.Text = obj.Method;
         }
     }

@@ -6,7 +6,7 @@ using System.Windows.Controls;
 
 namespace RecipesApp.ValidationRules
 {
-    public class MainValidationRule : ValidationRule
+    class MainValidationRule : ValidationRule
     {
         public int MinValue { get; set; }
         public int MaxValue { get; set; }

@@ -10,6 +10,7 @@ namespace RecipesApp
     public class SqliteDataAccess
     {
         static List<Recipe> recipes = new List<Recipe>();
+        static List<Ingredient> ingredients = new List<Ingredient>();
 
         public static List<Recipe> ListRecipes()
         {
@@ -49,6 +50,16 @@ namespace RecipesApp
             {
                 connection.Delete(id);
             }
+        }
+
+        public static List<Ingredient> GetIngredients(int id)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
+            {
+                ingredients = connection.Table<Ingredient>().Where(c => c.RecipeId == id).ToList().OrderBy(c => c.IngredientType).ToList();
+                connection.Close();
+            }
+            return ingredients;
         }
     }
 }

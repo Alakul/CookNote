@@ -21,7 +21,8 @@ namespace RecipesApp.Pages
     /// </summary>
     public partial class RecipeFormAdd : UserControl
     {
-        ObservableCollection<ListViewItem> items = new ObservableCollection<ListViewItem>();
+        List<Tuple<string, string, string>> ingList = new List<Tuple<string, string, string>>();
+        RecipeViewModel recipeViewModel;
 
         public RecipeFormAdd()
         {
@@ -33,34 +34,35 @@ namespace RecipesApp.Pages
 
             category.ItemsSource = RecipeData.categories;
             category.SelectedIndex = 0;
+            measurement.ItemsSource = RecipeData.typeList;
+            measurement.SelectedIndex = 0;
 
-            type.ItemsSource = RecipeData.typeList;
-            type.SelectedIndex = 0;
-
-            //ingredientList.Items.Add();
+            recipeViewModel = new RecipeViewModel();
+            DataContext = recipeViewModel;
         }
 
         private void SaveRecipe(object sender, RoutedEventArgs e)
         {
+            for (int i = 0; i < ingredientList.Items.Count; i++){
+                ingList.Add(new Tuple<string, string, string>(ingredientType.Text, amount.Text, measurement.SelectedValue.ToString()));
+            }
+
             Recipe recipe = new Recipe()
             {
                 Title = title.Text,
+                Description = description.Text,
                 Method = method.Text,
-                Category = category.SelectedItem.ToString()
+                Category = category.SelectedItem.ToString(),
             };
-
             SqliteDataAccess.SaveRecipe(recipe);
 
-
-
-
-            for (int i=0; i< 1; i++)
-            {
+            for (int i = 0; i < ingList.Count; i++){
                 Ingredient ingredient = new Ingredient()
                 {
-                    IngredientType = "d",
-                    Amount = 4,
-                    Measurement = "f"
+                    RecipeId = recipe.Id,
+                    IngredientType = ingList[i].Item1,
+                    Amount = ingList[i].Item2,
+                    Measurement = ingList[i].Item3
                 };
                 SqliteDataAccess.SaveIngredient(ingredient);
             }
@@ -68,12 +70,14 @@ namespace RecipesApp.Pages
        
         private void AddIngredientButton(object sender, RoutedEventArgs e)
         {
-
-            items.Add(new ListViewItem());
-            ingredientList.ItemsSource = items;
-            //ingredientList.Items.Add();
+            
         }
+        /*
+        private void DeleteIngredientButton(object sender, RoutedEventArgs e)
+        {
 
+        }
+        */
         private void SelectFileButton(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
