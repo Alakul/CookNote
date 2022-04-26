@@ -26,11 +26,19 @@ namespace RecipesApp.Pages
             InitializeComponent();
             recipes = new List<Recipe>();
             LoadRecipes();
+
+            List<string> categoryList = new List<string>(RecipeData.categories);
+            categoryList.Insert(0, "Wszystko");
+            category.ItemsSource = categoryList;
+            category.SelectedIndex = 0;
+
+            sort.ItemsSource = RecipeData.sortList;
+            sort.SelectedIndex = 0;
         }
 
         private void AddRecipe(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new RecipeForm());
+            Switcher.Switch(new RecipeFormAdd());
         }
 
         private void LoadRecipes()
@@ -41,19 +49,29 @@ namespace RecipesApp.Pages
 
         private void ListViewMouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
-            var item = (sender as ListView).SelectedItem;
-            if (item != null)
-            {
-                Switcher.Switch(new RecipeView());
+            object item = (sender as ListView).SelectedItem;
+            Recipe itemRec = (Recipe)item;
+            if (item != null){
+                Switcher.Switch(new RecipeView(itemRec));
             }
         }
 
         private void DeleteButton(object sender, RoutedEventArgs e)
         {
-            var button = (Button)sender;
-            var item = button.DataContext as Recipe;
-            SqliteDataAccess.DeleteRecipe(item);
-            LoadRecipes();
+            if (MessageBox.Show("Czy na pewno usunąć?", "Usuwanie", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No){
+                
+            }
+            else {
+                Button button = (Button)sender;
+                Recipe item = button.DataContext as Recipe;
+                SqliteDataAccess.DeleteRecipe(item);
+                LoadRecipes();
+            }
+        }
+
+        private void EditButton(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

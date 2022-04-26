@@ -5,20 +5,79 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RecipesApp.Pages"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" Background="{StaticResource BackgroundBrush}">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Border BorderThickness="0,0,0,1" BorderBrush="Gray" Background="#f2f2f2" Grid.Row="0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <Border Padding="15,10,10,10" Background="#f2f2f2">
-                    <Image x:Name="imageArrow" Source="/Images/arrowBlack.png" Height="14" MouseDown="BackButton" HorizontalAlignment="Left"/>
-                </Border>
-                <TextBlock VerticalAlignment="Center" FontWeight="Bold" FontSize="13" MouseDown="BackButton">PRZEPIS</TextBlock>
-            </StackPanel>
+        <ContentControl x:Name="contentControlMenu" Grid.Row="0"></ContentControl>
+
+        <Border Style="{StaticResource border}" Grid.Row="1">
+            <ScrollViewer Height="325">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Vertical" Grid.Column="0">
+                        <StackPanel Style="{StaticResource stackPanel}">
+                            <TextBlock x:Name="title" Style="{StaticResource textBlockHeader}">Tytuł</TextBlock>
+                            <TextBlock Style="{StaticResource textBlock}">Opis</TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Style="{StaticResource stackPanel}">
+                            <TextBlock Style="{StaticResource textBlockHeader}">Kategoria</TextBlock>
+                            <TextBlock Style="{StaticResource textBlock}">Kategoria</TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource stackPanel}" Grid.Column="1">
+                        <Image Height="120" Source="/Images/mch.jpg"/>
+                    </StackPanel>
+                    
+                    <StackPanel Style="{StaticResource stackPanel}" Grid.Row="1" Grid.Column="0">
+                        <TextBlock Style="{StaticResource textBlockHeader}" Text="Składniki"/>
+                        <ListView>
+                            <ListViewItem>Skl 1</ListViewItem>
+                            <ListViewItem>Skl 2</ListViewItem>
+                        </ListView>
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource stackPanel}" Grid.Row="1" Grid.Column="1">
+                        <TextBlock Style="{StaticResource textBlockHeader}" Text="Przygotowanie"/>
+                        <TextBlock x:Name="method" Style="{StaticResource textBlock}">Przygotowanie</TextBlock>
+                    </StackPanel>
+
+                    
+                </Grid>
+            </ScrollViewer>
+        </Border>
+
+        <Border BorderThickness="0,0,0,1" Background="{StaticResource WhiteBrush}" Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <Button Style="{StaticResource buttonList}">Edytuj</Button>
+                    <Button Style="{StaticResource buttonList}">Usuń</Button>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Style="{StaticResource buttonList}">Zapisz</Button>
+                    <Button Style="{StaticResource buttonList}">Drukuj</Button>
+                </StackPanel>
+            </Grid>
         </Border>
     </Grid>
 </UserControl>

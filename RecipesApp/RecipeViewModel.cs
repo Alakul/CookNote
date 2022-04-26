@@ -7,13 +7,14 @@ namespace RecipesApp
 {
     public class RecipeViewModel
     {
-        public List<Recipe> Items { get; set; }
-        public Recipe Recipe { get; set; }
+        readonly Recipe recipe;
+        readonly Ingredient ingredient;
 
-        public RecipeViewModel()
+        public RecipeViewModel(Recipe recipeM, Ingredient ingredientM)
         {
-            Items = new List<Recipe>();
-            Items = SqliteDataAccess.ListRecipes();
+            this.recipe = recipeM;
+            this.ingredient = ingredientM;
         }
+
     }
 }

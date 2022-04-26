@@ -11,28 +11,71 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        
-        <Border BorderThickness="0,0,0,1" BorderBrush="Gray" Background="#f2f2f2" Grid.Row="0" Grid.ColumnSpan="2">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <Border Padding="15,10,10,10" Background="#f2f2f2">
-                    <Image x:Name="imageArrow" Height="14" HorizontalAlignment="Left"/>
-                </Border>
-                <TextBlock VerticalAlignment="Center" FontWeight="Bold" FontSize="13">LISTA PRZEPISÓW</TextBlock>
-                <Button Click="AddRecipe">Dodaj nowy</Button>
-            </StackPanel>
+
+        <Border Padding="15,10,10,10" Background="{StaticResource PrimaryBrush}" Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Foreground="{StaticResource WhiteBrush}" VerticalAlignment="Center" FontWeight="Bold" FontSize="13">LISTA PRZEPISÓW</TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Style="{StaticResource buttonMenu}" Click="AddRecipe">DODAJ PRZEPIS</Button>
+                </StackPanel>
+            </Grid>
         </Border>
 
-        <ListView x:Name="recipesList" Grid.Row="2" SelectedItem="{Binding Id}" ItemsSource="{Binding}" PreviewMouseLeftButtonUp="ListViewMouseLeftButtonDown">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Title}" HorizontalAlignment="Stretch"/>
-                        <Button x:Name="deleteFromList" Width="32" Height="32" HorizontalAlignment="Right" Click="DeleteButton"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackPanel Style="{StaticResource stackPanel}" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Style="{StaticResource textBlockHorizontal}" HorizontalAlignment="Right" Grid.Column="0">Kategoria</TextBlock>
+                <ComboBox x:Name="category" Grid.Column="1"></ComboBox>
+
+                <TextBlock Style="{StaticResource textBlockHorizontal}" HorizontalAlignment="Right" Grid.Column="3">Wyszukaj</TextBlock>
+                <TextBox Grid.Column="4" Grid.ColumnSpan="2"></TextBox>
+
+                <TextBlock Style="{StaticResource textBlockHorizontal}" HorizontalAlignment="Right" Grid.Column="7">Sortuj</TextBlock>
+                <ComboBox x:Name="sort" Grid.Column="8" Height="22" VerticalAlignment="Top"/>
+            </Grid>
+        </StackPanel>
+
+        <Border Style="{StaticResource border}" Grid.Row="2">
+            <ListView x:Name="recipesList" Height="310" ItemContainerStyle="{StaticResource listViewItem}" SelectedItem="{Binding Id}" ItemsSource="{Binding}" PreviewMouseLeftButtonUp="ListViewMouseLeftButtonDown" HorizontalContentAlignment="Stretch">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="0">
+                                <TextBlock FontSize="14" Padding="10,6,10,6" Text="{Binding Title}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" >
+                                <Button x:Name="editRecipe" Style="{StaticResource buttonList}" Click="EditButton" Content="Edytuj"/>
+                                <Button x:Name="deleteFromList" Style="{StaticResource buttonList}" Click="DeleteButton" Content="Usuń"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Border>
     </Grid>
 </UserControl>

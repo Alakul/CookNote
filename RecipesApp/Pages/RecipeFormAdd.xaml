@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="RecipesApp.Pages.RecipeFormAdd"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RecipesApp.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="380"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ContentControl x:Name="contentControlMenu" Grid.Row="0"></ContentControl>
+
+        <Border Style="{StaticResource border}" Grid.Row="1">
+            <ScrollViewer x:Name="scrollViewer" Height="350" VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+                        <StackPanel Style="{StaticResource stackPanel}">
+                            <TextBlock Style="{StaticResource textBlockHeader}">Tytuł</TextBlock>
+                            <TextBox x:Name="title"></TextBox>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource stackPanel}">
+                            <TextBlock Style="{StaticResource textBlockHeader}">Kategoria</TextBlock>
+                            <ComboBox x:Name="category"></ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Style="{StaticResource stackPanel}" Grid.Column="0">
+                            <TextBlock Style="{StaticResource textBlockHeader}">Obraz</TextBlock>
+                            <Button Click="SelectFileButton">Wybierz plik</Button>
+                            <TextBlock x:Name="file" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                        
+                        <Image x:Name="image" Grid.Column="1" Source="/Images/mch.jpg" Height="110" VerticalAlignment="Center"/>
+                    </Grid>
+                    
+                    
+                    <StackPanel Grid.Row="1" Grid.Column="0">
+                        <StackPanel Style="{StaticResource stackPanel}">
+                            <TextBlock Style="{StaticResource textBlockHeader}">Składniki</TextBlock>
+
+                            <ListView x:Name="ingredientList" HorizontalContentAlignment="Stretch">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBox VerticalAlignment="Center" Grid.Column="0"/>
+                                            <TextBox VerticalAlignment="Center" Grid.Column="1"/>
+                                            <ComboBox Grid.Column="2"></ComboBox>
+
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="3" >
+                                                <Button x:Name="addUpList" Style="{StaticResource buttonList}"  Content="^"/>
+                                                <Button x:Name="deleteFromList" Style="{StaticResource buttonList}"  Content="X"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                                <ListViewItem>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBox VerticalAlignment="Center" Grid.Column="0"/>
+                                        <TextBox VerticalAlignment="Center" Grid.Column="1">
+                                        </TextBox>
+                                        <ComboBox x:Name="type" Grid.Column="2"></ComboBox>
+                                        
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="3" >
+                                            <Button x:Name="addUpList" Style="{StaticResource buttonList}"  Content="^"/>
+                                            <Button x:Name="deleteFromList" Style="{StaticResource buttonList}"  Content="X"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </ListViewItem>
+                            </ListView>
+                            <Button Width="100" Click="AddIngredientButton">Dodaj składnik</Button>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                        <StackPanel Style="{StaticResource stackPanel}">
+                            <TextBlock Style="{StaticResource textBlockHeader}">Przygotowanie</TextBlock>
+                            <TextBox x:Name="method" Height="150" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                        <Button Style="{StaticResource button}" Width="100" Click="SaveRecipe">Dodaj przepis</Button>
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</UserControl>

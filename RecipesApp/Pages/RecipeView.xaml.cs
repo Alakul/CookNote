@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RecipesApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,14 +19,23 @@ namespace RecipesApp.Pages
     /// </summary>
     public partial class RecipeView : UserControl
     {
-        public RecipeView()
+        public RecipeView(Recipe obj)
         {
             InitializeComponent();
-        }
+            
+            MenuTemplate mt = new MenuTemplate();
+            mt.header.Text = "PRZEPIS";
+            contentControlMenu.Content = mt;
 
-        private void BackButton(object sender, RoutedEventArgs e)
-        {
-            Switcher.Switch(new RecipesList());
+
+            /*
+            RecipeViewModel vm = new RecipeViewModel(obj, mt);
+            DataContext = vm;
+            */
+
+
+            title.Text = obj.Title;
+            method.Text = obj.Method;
         }
     }
 }
