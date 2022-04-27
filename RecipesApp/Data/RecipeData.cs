@@ -13,7 +13,7 @@ namespace RecipesApp
 
         public static List<string> sortList = new List<string>()
         {
-            "po nazwie rosnąco","po nazwie malejąco", "po dacie rosnąco", "po dacie malejąco"
+            "po nazwie rosnąco", "po nazwie malejąco", "po dacie rosnąco", "po dacie malejąco"
         };
 
         public static List<string> typeList = new List<string>()

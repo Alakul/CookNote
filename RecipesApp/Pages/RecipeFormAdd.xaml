@@ -7,7 +7,7 @@
              xmlns:vr="clr-namespace:RecipesApp.ValidationRules"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid x:Name="ser">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -66,7 +66,7 @@
                         <Image x:Name="image" Grid.Column="1" Source="/Images/mch.jpg" Height="195" VerticalAlignment="Center"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="1" Grid.Column="0">
+                    <StackPanel x:Name="st" Grid.Row="1" Grid.Column="0">
                         <StackPanel Style="{StaticResource stackPanel}">
                             <TextBlock Style="{StaticResource textBlockHeader}">Składniki</TextBlock>
 
@@ -81,9 +81,25 @@
                                                 <ColumnDefinition Width="auto"></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
 
-                                            <TextBox VerticalAlignment="Center" Grid.Column="0"/>
-                                            <TextBox VerticalAlignment="Center" Grid.Column="1"/>
-                                            <ComboBox Grid.Column="2"></ComboBox>
+                                            <TextBox x:Name="ingredientType" Tag="ingredientType" VerticalAlignment="Center" Grid.Column="0">
+                                                <TextBox.Text>
+                                                    <Binding Path="IngredientType" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                                        <Binding.ValidationRules>
+                                                            <vr:TextValidationRule MinSize="1" MaxSize="100" Message="Liczba znaków powinna zawierać się w przedziale od"/>
+                                                        </Binding.ValidationRules>
+                                                    </Binding>
+                                                </TextBox.Text>
+                                            </TextBox>
+                                            <TextBox x:Name="amount" VerticalAlignment="Center" Grid.Column="1" Style="{StaticResource textBoxInError}">
+                                                <TextBox.Text>
+                                                    <Binding Path="Amount" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                                        <Binding.ValidationRules>
+                                                            <vr:MainValidationRule MinValue="0" MaxValue="10000" Message="Liczba taktów powinna zawierać się w przedziale od"/>
+                                                        </Binding.ValidationRules>
+                                                    </Binding>
+                                                </TextBox.Text>
+                                            </TextBox>
+                                            <ComboBox x:Name="measurement" Grid.Column="2"></ComboBox>
 
                                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="3" >
                                                 <Button x:Name="addUpList" Style="{StaticResource buttonList}"  Content="^"/>
@@ -123,7 +139,7 @@
                                         
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="3" >
                                             <Button x:Name="addUpList" Style="{StaticResource buttonList}"  Content="^"/>
-                                            <Button x:Name="deleteFromList" Style="{StaticResource buttonList}"  Content="X"/>
+                                            <Button x:Name="deleteFromList" Style="{StaticResource buttonList}"  Content="X" Click="DeleteIngredientButton"/>
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>

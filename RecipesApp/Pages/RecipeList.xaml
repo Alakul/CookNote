@@ -39,19 +39,21 @@
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                     <ColumnDefinition Width="2*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Style="{StaticResource textBlockHorizontal}" HorizontalAlignment="Right" Grid.Column="0">Kategoria</TextBlock>
-                <ComboBox x:Name="category" Grid.Column="1"></ComboBox>
+                <ComboBox x:Name="category" Grid.Column="1" SelectionChanged="SelectionChange"></ComboBox>
 
                 <TextBlock Style="{StaticResource textBlockHorizontal}" HorizontalAlignment="Right" Grid.Column="3">Wyszukaj</TextBlock>
-                <TextBox Grid.Column="4" Grid.ColumnSpan="2"></TextBox>
+                <TextBox x:Name="search" Grid.Column="4" Grid.ColumnSpan="2"></TextBox>
+                <Button Click="SearchForRecipes" Grid.Column="6">O></Button>
 
-                <TextBlock Style="{StaticResource textBlockHorizontal}" HorizontalAlignment="Right" Grid.Column="7">Sortuj</TextBlock>
-                <ComboBox x:Name="sort" Grid.Column="8" Height="22" VerticalAlignment="Top"/>
+                <TextBlock Style="{StaticResource textBlockHorizontal}" HorizontalAlignment="Right" Grid.Column="8">Sortuj</TextBlock>
+                <ComboBox x:Name="sort" Grid.Column="9" Height="22" VerticalAlignment="Top" SelectionChanged="SortChange"/>
             </Grid>
         </StackPanel>
 

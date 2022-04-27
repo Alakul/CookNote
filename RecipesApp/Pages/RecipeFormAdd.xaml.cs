@@ -3,6 +3,7 @@ using RecipesApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -53,6 +54,7 @@ namespace RecipesApp.Pages
                 Description = description.Text,
                 Method = method.Text,
                 Category = category.SelectedItem.ToString(),
+                Date = DateTime.Now
             };
             SqliteDataAccess.SaveRecipe(recipe);
 
@@ -67,17 +69,19 @@ namespace RecipesApp.Pages
                 SqliteDataAccess.SaveIngredient(ingredient);
             }
         }
-       
+
         private void AddIngredientButton(object sender, RoutedEventArgs e)
         {
-            
+            ingredientList.Items.Add(new ItemsControl());
         }
-        /*
+        
         private void DeleteIngredientButton(object sender, RoutedEventArgs e)
         {
-
+            Button button = (Button)sender;
+            Ingredient item = button.DataContext as Ingredient;
+            ingredientList.Items.Remove(item);
         }
-        */
+        
         private void SelectFileButton(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
