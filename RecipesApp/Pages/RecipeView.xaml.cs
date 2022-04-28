@@ -40,10 +40,11 @@ namespace RecipesApp.Pages
         private void SetRecipeValues(Recipe recipe)
         {
             Recipe recipeFull = SqliteDataAccess.GetRecipe(recipe);
-            ingredientList.ItemsSource = recipeFull.Ingredients;
+            
             title.Text = recipeFull.Title;
             description.Text = recipeFull.Description;
             category.Text = recipeFull.Category;
+            ingredients.Text = recipeFull.Ingredients;
             method.Text = recipeFull.Method;
         }
 

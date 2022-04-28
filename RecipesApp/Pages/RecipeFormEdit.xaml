@@ -69,41 +69,15 @@
                     <StackPanel x:Name="st" Grid.Row="1" Grid.Column="0">
                         <StackPanel Style="{StaticResource stackPanel}">
                             <TextBlock Style="{StaticResource textBlockHeader}">Składniki</TextBlock>
-
-                            <ListView x:Name="ingredientList" HorizontalContentAlignment="Stretch">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="2*"></ColumnDefinition>
-                                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                                <ColumnDefinition Width="auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="auto"></ColumnDefinition>
-                                            </Grid.ColumnDefinitions>
-
-                                            <TextBox x:Name="ingredientType" Tag="ingredientType" VerticalAlignment="Center" Grid.Column="0">
-                                                <TextBox.Text>
-                                                    <Binding Path="IngredientType" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                                                        <Binding.ValidationRules>
-                                                            <vr:TextValidationRule MinSize="1" MaxSize="100" Message="Liczba znaków powinna zawierać się w przedziale od"/>
-                                                        </Binding.ValidationRules>
-                                                    </Binding>
-                                                </TextBox.Text>
-                                            </TextBox>
-                                            <TextBox x:Name="amount" VerticalAlignment="Center" Grid.Column="1" Style="{StaticResource textBoxInError}">
-                                                <TextBox.Text>
-                                                    <Binding Path="Amount" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                                                        <Binding.ValidationRules>
-                                                            <vr:MainValidationRule MinValue="0" MaxValue="10000" Message="Liczba taktów powinna zawierać się w przedziale od"/>
-                                                        </Binding.ValidationRules>
-                                                    </Binding>
-                                                </TextBox.Text>
-                                            </TextBox>
-                                            <ComboBox x:Name="measurement" Grid.Column="2"></ComboBox>
-                                        </Grid>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
+                            <TextBox x:Name="ingredients" Height="150" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible">
+                                <TextBox.Text>
+                                    <Binding Path="Ingredients" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <vr:TextValidationRule MinSize="1" MaxSize="10000" Message="Liczba znaków powinna zawierać się w przedziale od"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
@@ -122,7 +96,7 @@
                     </StackPanel>
 
                     <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-                        <Button Width="100" Content="Edytuj przepis" Click="SaveRecipe">
+                        <Button Width="100" Content="Edytuj przepis" Click="EditRecipe">
                             <Button.Style>
                                 <Style TargetType="{x:Type Button}">
                                     <Setter Property="IsEnabled" Value="false" />
@@ -130,9 +104,8 @@
                                         <MultiDataTrigger>
                                             <MultiDataTrigger.Conditions>
                                                 <Condition Binding="{Binding ElementName=title, Path=(Validation.HasError)}" Value="false" />
+                                                <Condition Binding="{Binding ElementName=ingredients, Path=(Validation.HasError)}" Value="false" />
                                                 <Condition Binding="{Binding ElementName=method, Path=(Validation.HasError)}" Value="false" />
-                                                <Condition Binding="{Binding ElementName=ingredientType, Path=(Validation.HasError)}" Value="false" />
-                                                <Condition Binding="{Binding ElementName=amount, Path=(Validation.HasError)}" Value="false" />
                                             </MultiDataTrigger.Conditions>
                                             <Setter Property="IsEnabled" Value="true" />
                                         </MultiDataTrigger>

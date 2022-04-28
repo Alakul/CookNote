@@ -46,33 +46,7 @@
                     
                     <StackPanel Style="{StaticResource stackPanel}" Grid.Row="1" Grid.Column="0">
                         <TextBlock Style="{StaticResource textBlockHeader}" Text="Składniki"/>
-
-                        <ItemsControl x:Name="ingredientList">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-
-                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="0">
-                                            <TextBlock Style="{StaticResource textBlock}" Padding="0,6,6,6" Text="{Binding IngredientType}"/>
-                                        </StackPanel>
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
-                                            <TextBlock Style="{StaticResource textBlock}" Padding="6,6,0,6">
-                                                <TextBlock.Text>
-                                                    <MultiBinding StringFormat="{}{0} {1}">
-                                                        <Binding Path="Amount"/>
-                                                        <Binding Path="Measurement"/>
-                                                    </MultiBinding>
-                                                </TextBlock.Text>
-                                            </TextBlock>
-                                        </StackPanel>
-                                    </Grid>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
+                        <TextBlock x:Name="ingredients" Style="{StaticResource textBlock}">Składniki</TextBlock>
                     </StackPanel>
 
                     <StackPanel Style="{StaticResource stackPanel}" Grid.Row="1" Grid.Column="1">

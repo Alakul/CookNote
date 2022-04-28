@@ -13,12 +13,22 @@ namespace RecipesApp
         static List<Recipe> recipes = new List<Recipe>();
         static Recipe recipeFull;
 
-        public static void SaveRecipe(Recipe recipe)
+        public static void InsertRecipe(Recipe recipe)
         {
             using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
             {
                 connection.CreateTable<Recipe>();
-                connection.InsertWithChildren(recipe, recursive: true);
+                connection.Insert(recipe);
+                connection.Close();
+            }
+        }
+
+        public static void UpdateRecipe(Recipe recipe)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
+            {
+                connection.CreateTable<Recipe>();
+                connection.Update(recipe);
                 connection.Close();
             }
         }
@@ -27,7 +37,7 @@ namespace RecipesApp
         {
             using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
             {
-                connection.Delete(id, recursive: true);
+                connection.Delete(id);
                 connection.Close();
             }
         }
@@ -36,18 +46,9 @@ namespace RecipesApp
         {
             using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
             {
-                recipeFull = connection.GetWithChildren<Recipe>(recipe.Id, recursive: true);
+                recipeFull = connection.Table<Recipe>().Where(c => c.Id == recipe.Id).FirstOrDefault();
             }
             return recipeFull;
-        }
-
-        public static void ClearI()
-        {
-            using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
-            {
-                connection.DropTable<Ingredient>();
-                connection.Close();
-            }
         }
 
         public static List<Recipe> ListRecipes(string searchValue, string category, string orderValue, string orderType)

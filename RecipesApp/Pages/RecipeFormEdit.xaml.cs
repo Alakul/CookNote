@@ -20,12 +20,15 @@ namespace RecipesApp.Pages
     public partial class RecipeFormEdit : UserControl
     {
         RecipeViewModel recipeViewModel;
+        Recipe recipeValue;
+
         public RecipeFormEdit(Recipe recipe)
         {
             InitializeComponent();
 
             SetMenuTemplate();
             SetViewModel(recipe);
+            recipeValue = recipe;
         }
 
         private void SetMenuTemplate()
@@ -38,25 +41,30 @@ namespace RecipesApp.Pages
         private void SetViewModel(Recipe recipe)
         {
             recipeViewModel = new RecipeViewModel();
-            DataContext = recipeViewModel;
-
             Recipe recipeFull = SqliteDataAccess.GetRecipe(recipe);
 
             recipeViewModel.Title = recipeFull.Title;
             recipeViewModel.Description = recipeFull.Description;
             recipeViewModel.Category = recipeFull.Category;
+            recipeViewModel.Ingredients = recipeFull.Ingredients;
             recipeViewModel.Method = recipeFull.Method;
 
             category.ItemsSource = RecipeData.categories;
             category.SelectedValue = recipeFull.Category;
 
-            ingredientList.Items.Clear();
-            ingredientList.ItemsSource = recipeFull.Ingredients;
+            DataContext = recipeViewModel;
         }
 
-        private void SaveRecipe(object sender, RoutedEventArgs e)
+        private void EditRecipe(object sender, RoutedEventArgs e)
         {
-            
+            recipeValue.Title = title.Text.Trim();
+            recipeValue.Description = description.Text.Trim();
+            recipeValue.Ingredients = ingredients.Text.Trim();
+            recipeValue.Method = method.Text.Trim();
+            recipeValue.Category = category.Text.Trim();
+            recipeValue.Date = DateTime.Now;
+
+            SqliteDataAccess.UpdateRecipe(recipeValue);
         }
     }
 }

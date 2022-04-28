@@ -45,8 +45,6 @@ namespace RecipesApp.Pages
         {
             category.ItemsSource = RecipeData.categories;
             category.SelectedIndex = 0;
-            measurement.ItemsSource = RecipeData.typeList;
-            measurement.SelectedIndex = 0;
         }
 
         private void SetViewModel()
@@ -55,48 +53,18 @@ namespace RecipesApp.Pages
             DataContext = recipeViewModel;
         }
 
-        private void SaveRecipe(object sender, RoutedEventArgs e)
+        private void AddRecipe(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < ingredientList.Items.Count; i++){
-                ingList.Add(new Tuple<string, string, string>(ingredientType.Text, amount.Text, measurement.SelectedValue.ToString()));
-            }
-
-            List<Ingredient> ingredientsList = new List<Ingredient>();
-            for (int i = 0; i < ingList.Count; i++)
-            {
-                Ingredient ingredient = new Ingredient()
-                {
-                    IngredientType = ingList[i].Item1.Trim(),
-                    Amount = ingList[i].Item2,
-                    Measurement = ingList[i].Item3
-                };
-                ingredientsList.Add(ingredient);
-
-                //SqliteDataAccess.SaveIngredient(ingredient);
-            }
-
             Recipe recipe = new Recipe()
             {
                 Title = title.Text.Trim(),
                 Description = description.Text.Trim(),
+                Ingredients = ingredients.Text.Trim(),
                 Method = method.Text.Trim(),
                 Category = category.SelectedItem.ToString(),
-                Date = DateTime.Now,
-                Ingredients = ingredientsList
+                Date = DateTime.Now
             };
-            SqliteDataAccess.SaveRecipe(recipe);
-        }
-
-        private void AddIngredientButton(object sender, RoutedEventArgs e)
-        {
-            ingredientList.Items.Add(new ItemsControl());
-        }
-        
-        private void DeleteIngredientButton(object sender, RoutedEventArgs e)
-        {
-            Button button = (Button)sender;
-            Ingredient item = button.DataContext as Ingredient;
-            ingredientList.Items.Remove(item);
+            SqliteDataAccess.InsertRecipe(recipe);
         }
         
         private void SelectFileButton(object sender, RoutedEventArgs e)

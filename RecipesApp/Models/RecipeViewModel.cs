@@ -11,18 +11,15 @@ namespace RecipesApp
         {
             Title = "Tytuł";
             Method = "Przygotowanie";
-            IngredientType = "Składnik";
+            Ingredients = "Składniki";
         }
 
         public string Title { get; set; }
         public string Description { get; set; }
+        public string Ingredients { get; set; }
         public string Method { get; set; }
         public string Category { get; set; }
         public string Image { get; set; }
         public DateTime Date { get; set; }
-
-        public string IngredientType { get; set; }
-        public int Amount { get; set; }
-        public string Measurement { get; set; }
     }
 }
