@@ -28,16 +28,29 @@ namespace RecipesApp.Pages
         public RecipeFormAdd()
         {
             InitializeComponent();
-            category.ItemsSource = RecipeData.categories;
-            MenuTemplate mt = new MenuTemplate();
-            mt.header.Text = "DODAJ PRZEPIS";
-            contentControlMenu.Content = mt;
 
+            SetMenuTemplate();
+            SetComboBoxValues();
+            SetViewModel();
+        }
+
+        private void SetMenuTemplate()
+        {
+            MenuTemplate menuTemplate = new MenuTemplate();
+            menuTemplate.header.Text = "DODAJ PRZEPIS";
+            contentControlMenu.Content = menuTemplate;
+        }
+
+        private void SetComboBoxValues()
+        {
             category.ItemsSource = RecipeData.categories;
             category.SelectedIndex = 0;
             measurement.ItemsSource = RecipeData.typeList;
             measurement.SelectedIndex = 0;
+        }
 
+        private void SetViewModel()
+        {
             recipeViewModel = new RecipeViewModel();
             DataContext = recipeViewModel;
         }
@@ -48,26 +61,30 @@ namespace RecipesApp.Pages
                 ingList.Add(new Tuple<string, string, string>(ingredientType.Text, amount.Text, measurement.SelectedValue.ToString()));
             }
 
-            Recipe recipe = new Recipe()
+            List<Ingredient> ingredientsList = new List<Ingredient>();
+            for (int i = 0; i < ingList.Count; i++)
             {
-                Title = title.Text,
-                Description = description.Text,
-                Method = method.Text,
-                Category = category.SelectedItem.ToString(),
-                Date = DateTime.Now
-            };
-            SqliteDataAccess.SaveRecipe(recipe);
-
-            for (int i = 0; i < ingList.Count; i++){
                 Ingredient ingredient = new Ingredient()
                 {
-                    RecipeId = recipe.Id,
-                    IngredientType = ingList[i].Item1,
+                    IngredientType = ingList[i].Item1.Trim(),
                     Amount = ingList[i].Item2,
                     Measurement = ingList[i].Item3
                 };
-                SqliteDataAccess.SaveIngredient(ingredient);
+                ingredientsList.Add(ingredient);
+
+                //SqliteDataAccess.SaveIngredient(ingredient);
             }
+
+            Recipe recipe = new Recipe()
+            {
+                Title = title.Text.Trim(),
+                Description = description.Text.Trim(),
+                Method = method.Text.Trim(),
+                Category = category.SelectedItem.ToString(),
+                Date = DateTime.Now,
+                Ingredients = ingredientsList
+            };
+            SqliteDataAccess.SaveRecipe(recipe);
         }
 
         private void AddIngredientButton(object sender, RoutedEventArgs e)

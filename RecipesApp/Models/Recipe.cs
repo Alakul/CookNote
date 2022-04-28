@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,6 +17,9 @@ namespace RecipesApp.Models
         public string Category { get; set; }
         public string Image { get; set; }
         public DateTime Date { get; set; }
+
+        [OneToMany(CascadeOperations = CascadeOperation.CascadeDelete | CascadeOperation.CascadeInsert | CascadeOperation.CascadeRead)]
+        public List<Ingredient> Ingredients { get; set; }
 
 
         public override string ToString()

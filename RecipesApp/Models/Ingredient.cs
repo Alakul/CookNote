@@ -14,11 +14,9 @@ namespace RecipesApp.Models
 
         [SQLiteNetExtensions.Attributes.ForeignKey(typeof(Recipe))]
         public int RecipeId { get; set; }
+
         public string IngredientType { get; set; }
         public string Amount { get; set; }
         public string Measurement { get; set; }
-
-        [ManyToOne]
-        public Recipe Recipe { get; set; }
     }
 }

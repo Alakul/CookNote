@@ -29,6 +29,13 @@ namespace RecipesApp.Pages
         {
             InitializeComponent();
 
+            SetComboBoxValues();
+            SetValues();
+            RecipesToList();
+        }
+
+        private void SetComboBoxValues()
+        {
             List<string> categoryList = new List<string>(RecipeData.categories);
             categoryList.Insert(0, "Wszystko");
             category.ItemsSource = categoryList;
@@ -36,14 +43,15 @@ namespace RecipesApp.Pages
 
             sort.ItemsSource = RecipeData.sortList;
             sort.SelectedIndex = 0;
+        }
 
+        private void SetValues()
+        {
             searchValue = "";
             categoryName = "";
             orderValue = "title";
             orderType = "ascending";
             recipes = new List<Recipe>();
-
-            RecipesToList();
         }
 
         private void AddRecipe(object sender, RoutedEventArgs e)
@@ -51,12 +59,22 @@ namespace RecipesApp.Pages
             Switcher.Switch(new RecipeFormAdd());
         }
 
+        private void EditButton(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            Recipe item = button.DataContext as Recipe;
+            if (item != null)
+            {
+                Switcher.Switch(new RecipeFormEdit(item));
+            }
+        }
+
         private void ListViewMouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
             object item = (sender as ListView).SelectedItem;
-            Recipe itemRec = (Recipe)item;
+            Recipe recipeItem = (Recipe)item;
             if (item != null){
-                Switcher.Switch(new RecipeView(itemRec));
+                Switcher.Switch(new RecipeView(recipeItem));
             }
         }
 
@@ -70,11 +88,6 @@ namespace RecipesApp.Pages
                 SqliteDataAccess.DeleteRecipe(item);
                 RecipesToList();
             }
-        }
-
-        private void EditButton(object sender, RoutedEventArgs e)
-        {
-            
         }
 
         private void SelectionChange(object sender, SelectionChangedEventArgs e)

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\App.xaml
-6932687957
+795772337
 
-17-1589230922
+18-990856805
 199-538093693
-Dictionaries\ResourcesDictionary.xaml;MainWindow.xaml;Pages\RecipeFormAdd.xaml;Pages\RecipeList.xaml;Pages\RecipeView.xaml;Templates\MenuTemplate.xaml;
+Dictionaries\ResourcesDictionary.xaml;MainWindow.xaml;Pages\RecipeFormAdd.xaml;Pages\RecipeFormEdit.xaml;Pages\RecipeList.xaml;Pages\RecipeView.xaml;Templates\MenuTemplate.xaml;
 
-True
+False
 

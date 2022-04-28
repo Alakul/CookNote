@@ -93,8 +93,8 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0" Orientation="Horizontal">
-                    <Button Style="{StaticResource buttonList}">Edytuj</Button>
-                    <Button Style="{StaticResource buttonList}">Usuń</Button>
+                    <Button Click="EditButton" Style="{StaticResource buttonList}">Edytuj</Button>
+                    <Button Click="DeleteButton" Style="{StaticResource buttonList}">Usuń</Button>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Style="{StaticResource buttonList}">Zapisz</Button>

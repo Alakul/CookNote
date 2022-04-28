@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Pages\RecipeFormEdit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Templates\MenuTemplate.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,6 +25,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\RecipeFormEdit.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Templates\MenuTemplate.xaml">

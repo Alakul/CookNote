@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="RecipesApp.Pages.RecipeFormAdd"
+﻿<UserControl x:Class="RecipesApp.Pages.RecipeFormEdit"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -61,7 +61,7 @@
 
                     <StackPanel Style="{StaticResource stackPanel}" Grid.Column="1">
                         <TextBlock Style="{StaticResource textBlockHeader}">Obraz</TextBlock>
-                        <Button Click="SelectFileButton">Wybierz plik</Button>
+                        <Button>Wybierz plik</Button>
                         <TextBlock x:Name="file" TextWrapping="Wrap"></TextBlock>
                         <Image x:Name="image" Grid.Column="1" Source="/Images/mch.jpg" Height="195" VerticalAlignment="Center"/>
                     </StackPanel>
@@ -100,51 +100,10 @@
                                                 </TextBox.Text>
                                             </TextBox>
                                             <ComboBox x:Name="measurement" Grid.Column="2"></ComboBox>
-
-                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="3" >
-                                                <Button x:Name="addUpList" Style="{StaticResource buttonList}"  Content="^"/>
-                                                <Button x:Name="deleteFromList" Style="{StaticResource buttonList}"  Content="X"/>
-                                            </StackPanel>
                                         </Grid>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
-                                <ListViewItem>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="2*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="auto"></ColumnDefinition>
-                                            <ColumnDefinition Width="auto"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-
-                                        <TextBox x:Name="ingredientType" VerticalAlignment="Center" Grid.Column="0">
-                                            <TextBox.Text>
-                                                <Binding Path="IngredientType" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                                                    <Binding.ValidationRules>
-                                                        <vr:TextValidationRule MinSize="1" MaxSize="100" Message="Liczba znaków powinna zawierać się w przedziale od"/>
-                                                    </Binding.ValidationRules>
-                                                </Binding>
-                                            </TextBox.Text>
-                                        </TextBox>
-                                        <TextBox x:Name="amount" VerticalAlignment="Center" Grid.Column="1" Style="{StaticResource textBoxInError}">
-                                            <TextBox.Text>
-                                                <Binding Path="Amount" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                                                    <Binding.ValidationRules>
-                                                        <vr:MainValidationRule MinValue="0" MaxValue="10000" Message="Liczba taktów powinna zawierać się w przedziale od"/>
-                                                    </Binding.ValidationRules>
-                                                </Binding>
-                                            </TextBox.Text>
-                                        </TextBox>
-                                        <ComboBox x:Name="measurement" Grid.Column="2"></ComboBox>
-                                        
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="3" >
-                                            <Button x:Name="addUpList" Style="{StaticResource buttonList}"  Content="^"/>
-                                            <Button x:Name="deleteFromList" Style="{StaticResource buttonList}"  Content="X" Click="DeleteIngredientButton"/>
-                                        </StackPanel>
-                                    </Grid>
-                                </ListViewItem>
                             </ListView>
-                            <Button Width="100" Click="AddIngredientButton">Dodaj składnik</Button>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
@@ -161,9 +120,9 @@
                             </TextBox>
                         </StackPanel>
                     </StackPanel>
-                    
+
                     <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-                        <Button Width="100" Content="Dodaj przepis" Click="SaveRecipe">
+                        <Button Width="100" Content="Edytuj przepis" Click="SaveRecipe">
                             <Button.Style>
                                 <Style TargetType="{x:Type Button}">
                                     <Setter Property="IsEnabled" Value="false" />

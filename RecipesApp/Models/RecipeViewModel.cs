@@ -24,16 +24,5 @@ namespace RecipesApp
         public string IngredientType { get; set; }
         public int Amount { get; set; }
         public string Measurement { get; set; }
-
-        /*
-        readonly Recipe recipe;
-        readonly Ingredient ingredient;
-
-        public RecipeViewModel(Recipe recipeM, Ingredient ingredientM)
-        {
-            this.recipe = recipeM;
-            this.ingredient = ingredientM;
-        }
-        */
     }
 }

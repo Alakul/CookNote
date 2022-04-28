@@ -19,27 +19,47 @@ namespace RecipesApp.Pages
     /// </summary>
     public partial class RecipeView : UserControl
     {
-        List<Ingredient> ingredients;
+        private Recipe recipeItem;
 
-        public RecipeView(Recipe obj)
+        public RecipeView(Recipe recipe)
         {
             InitializeComponent();
-            
-            MenuTemplate mt = new MenuTemplate();
-            mt.header.Text = "PRZEPIS";
-            contentControlMenu.Content = mt;
 
-            /*
-            RecipeViewModel vm = new RecipeViewModel(obj, mt);
-            DataContext = vm;
-            */
-            ingredients = SqliteDataAccess.GetIngredients(obj.Id);
-            ingredientList.ItemsSource = ingredients;
+            SetMenuTemplate();
+            SetRecipeValues(recipe);
+            recipeItem = recipe;
+        }
 
-            title.Text = obj.Title;
-            description.Text = obj.Description;
-            category.Text = obj.Category;
-            method.Text = obj.Method;
+        private void SetMenuTemplate()
+        {
+            MenuTemplate menuTemplate = new MenuTemplate();
+            menuTemplate.header.Text = "PRZEPIS";
+            contentControlMenu.Content = menuTemplate;
+        }
+
+        private void SetRecipeValues(Recipe recipe)
+        {
+            Recipe recipeFull = SqliteDataAccess.GetRecipe(recipe);
+            ingredientList.ItemsSource = recipeFull.Ingredients;
+            title.Text = recipeFull.Title;
+            description.Text = recipeFull.Description;
+            category.Text = recipeFull.Category;
+            method.Text = recipeFull.Method;
+        }
+
+        private void EditButton(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new RecipeFormEdit(recipeItem));
+        }
+
+        private void DeleteButton(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Czy na pewno usunąć?", "Usuwanie", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No){
+            }
+            else {
+                SqliteDataAccess.DeleteRecipe(recipeItem);
+                Switcher.Switch(new RecipesList());
+            }
         }
     }
 }
