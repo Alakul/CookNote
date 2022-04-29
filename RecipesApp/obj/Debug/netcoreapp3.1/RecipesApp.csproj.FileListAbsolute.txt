@@ -52,3 +52,5 @@ C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Recipe
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeFormEdit.g.cs
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeFormEdit.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Dictionaries\ComboBoxDictionary.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Dictionaries\ListViewItemDictionary.baml

@@ -9,8 +9,8 @@
     <Grid>
         <Border Background="{StaticResource PrimaryBrush}" Grid.Row="0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <Border MouseEnter="EnterButton" MouseLeave="LeaveButton" Padding="15,10,10,10" Background="{StaticResource PrimaryBrush}">
-                    <Image x:Name="imageArrow" Source="/Images/arrowWhite.png" Height="14" MouseDown="BackButton" HorizontalAlignment="Left"/>
+                <Border Padding="15,10,10,10" Background="{StaticResource PrimaryBrush}" MouseDown="BackButton">
+                    <Path x:Name="backPath" Style="{StaticResource backPath}" HorizontalAlignment="Left"/>
                 </Border>
                 <TextBlock x:Name="header" Foreground="{StaticResource WhiteBrush}" VerticalAlignment="Center" FontWeight="Bold" FontSize="13" MouseDown="BackButton">PODPIS</TextBlock>
             </StackPanel>

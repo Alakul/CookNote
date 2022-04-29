@@ -28,15 +28,5 @@ namespace RecipesApp
         {
             Switcher.Switch(new RecipesList());
         }
-
-        private void EnterButton(object sender, RoutedEventArgs e)
-        {
-            imageArrow.Source = new BitmapImage(new Uri(@"/Images/arrowLightGray.png", UriKind.Relative));
-        }
-
-        private void LeaveButton(object sender, RoutedEventArgs e)
-        {
-            imageArrow.Source = new BitmapImage(new Uri(@"/Images/arrowWhite.png", UriKind.Relative));
-        }
     }
 }

@@ -71,8 +71,8 @@
                     <Button Click="DeleteButton" Style="{StaticResource buttonList}">Usuń</Button>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Style="{StaticResource buttonList}">Zapisz</Button>
-                    <Button Style="{StaticResource buttonList}">Drukuj</Button>
+                    <Button Visibility="Hidden" Style="{StaticResource buttonList}">Zapisz</Button>
+                    <Button Visibility="Hidden" Style="{StaticResource buttonList}">Drukuj</Button>
                 </StackPanel>
             </Grid>
         </Border>

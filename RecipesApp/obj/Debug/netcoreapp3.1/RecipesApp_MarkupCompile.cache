@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\App.xaml
-795772337
+9433405891
 
 151760223132
 199-538093693
-Dictionaries\ResourcesDictionary.xaml;MainWindow.xaml;Pages\RecipeFormAdd.xaml;Pages\RecipeFormEdit.xaml;Pages\RecipeList.xaml;Pages\RecipeView.xaml;Templates\MenuTemplate.xaml;
+Dictionaries\ComboBoxDictionary.xaml;Dictionaries\ListViewItemDictionary.xaml;Dictionaries\ResourcesDictionary.xaml;MainWindow.xaml;Pages\RecipeFormAdd.xaml;Pages\RecipeFormEdit.xaml;Pages\RecipeList.xaml;Pages\RecipeView.xaml;Templates\MenuTemplate.xaml;
 
 False
 
