@@ -32,9 +32,7 @@ namespace RecipesApp.Pages
 
         private void SetMenuTemplate()
         {
-            MenuTemplate menuTemplate = new MenuTemplate();
-            menuTemplate.header.Text = "PRZEPIS";
-            contentControlMenu.Content = menuTemplate;
+            menuControl.header.Text = "PRZEPIS";
         }
 
         private void SetRecipeValues(Recipe recipe)

@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RecipesApp.Pages"
-             xmlns:vr="clr-namespace:RecipesApp.ValidationRules"
+             xmlns:tmpl="clr-namespace:RecipesApp.Templates"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -13,109 +13,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <ContentControl x:Name="contentControlMenu" Grid.Row="0"></ContentControl>
-
-        <Border Style="{StaticResource border}" Grid.Row="1">
-            <ScrollViewer x:Name="scrollViewer" Height="350" VerticalScrollBarVisibility="Auto">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-
-                    <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
-                        <StackPanel Style="{StaticResource stackPanel}">
-                            <TextBlock Style="{StaticResource textBlockHeader}">Tytuł</TextBlock>
-                            <TextBox x:Name="title" Style="{StaticResource textBoxInError}">
-                                <TextBox.Text>
-                                    <Binding Path="Title" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                                        <Binding.ValidationRules>
-                                            <vr:TextValidationRule MinSize="1" MaxSize="100" Message="Liczba znaków powinna zawierać się w przedziale od"/>
-                                        </Binding.ValidationRules>
-                                    </Binding>
-                                </TextBox.Text>
-                            </TextBox>
-                        </StackPanel>
-                        <StackPanel Style="{StaticResource stackPanel}">
-                            <TextBlock Style="{StaticResource textBlockHeader}">Opis</TextBlock>
-                            <TextBox x:Name="description" Height="100" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible">
-                                <TextBox.Text>
-                                    <Binding Path="Description" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                                        <Binding.ValidationRules>
-                                            <vr:TextValidationRule MinSize="0" MaxSize="5000" Message="Liczba znaków powinna zawierać się w przedziale od"/>
-                                        </Binding.ValidationRules>
-                                    </Binding>
-                                </TextBox.Text>
-                            </TextBox>
-                        </StackPanel>
-                        <StackPanel Style="{StaticResource stackPanel}">
-                            <TextBlock Style="{StaticResource textBlockHeader}">Kategoria</TextBlock>
-                            <ComboBox x:Name="category"></ComboBox>
-                        </StackPanel>
-                    </StackPanel>
-
-                    <StackPanel Style="{StaticResource stackPanel}" Grid.Column="1">
-                        <TextBlock Style="{StaticResource textBlockHeader}">Obraz</TextBlock>
-                        <Button Click="SelectFileButton">Wybierz plik</Button>
-                        <TextBlock x:Name="file" TextWrapping="Wrap"></TextBlock>
-                        <Image x:Name="image" Grid.Column="1" Source="/Images/mch.jpg" Height="195" VerticalAlignment="Center"/>
-                    </StackPanel>
-
-                    <StackPanel Grid.Row="1" Grid.Column="0">
-                        <StackPanel Style="{StaticResource stackPanel}">
-                            <TextBlock Style="{StaticResource textBlockHeader}">Składniki</TextBlock>
-                            <TextBox x:Name="ingredients" Height="150" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible">
-                                <TextBox.Text>
-                                    <Binding Path="Ingredients" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                                        <Binding.ValidationRules>
-                                            <vr:TextValidationRule MinSize="1" MaxSize="10000" Message="Liczba znaków powinna zawierać się w przedziale od"/>
-                                        </Binding.ValidationRules>
-                                    </Binding>
-                                </TextBox.Text>
-                            </TextBox>
-                        </StackPanel>
-                    </StackPanel>
-                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
-                        <StackPanel Style="{StaticResource stackPanel}">
-                            <TextBlock Style="{StaticResource textBlockHeader}">Przygotowanie</TextBlock>
-                            <TextBox x:Name="method" Height="150" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible">
-                                <TextBox.Text>
-                                    <Binding Path="Method" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                                        <Binding.ValidationRules>
-                                            <vr:TextValidationRule MinSize="1" MaxSize="10000" Message="Liczba znaków powinna zawierać się w przedziale od"/>
-                                        </Binding.ValidationRules>
-                                    </Binding>
-                                </TextBox.Text>
-                            </TextBox>
-                        </StackPanel>
-                    </StackPanel>
-                    
-                    <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-                        <Button Width="100" Content="Dodaj przepis" Click="AddRecipe">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="IsEnabled" Value="false" />
-                                    <Style.Triggers>
-                                        <MultiDataTrigger>
-                                            <MultiDataTrigger.Conditions>
-                                                <Condition Binding="{Binding ElementName=title, Path=(Validation.HasError)}" Value="false" />
-                                                <Condition Binding="{Binding ElementName=ingredients, Path=(Validation.HasError)}" Value="false" />
-                                                <Condition Binding="{Binding ElementName=method, Path=(Validation.HasError)}" Value="false" />
-                                            </MultiDataTrigger.Conditions>
-                                            <Setter Property="IsEnabled" Value="true" />
-                                        </MultiDataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                    </StackPanel>
-                </Grid>
-            </ScrollViewer>
-        </Border>
+        <tmpl:MenuTemplate x:Name="menuControl" Grid.Row="0"></tmpl:MenuTemplate>
+        <tmpl:FormTemplate x:Name="formControl" Grid.Row="1" RecipeButton="AddRecipe" ImageButton="SelectFileButton"></tmpl:FormTemplate>
     </Grid>
 </UserControl>

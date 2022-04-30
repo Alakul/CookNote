@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using RecipesApp.Models;
+using RecipesApp.Templates;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -29,39 +30,31 @@ namespace RecipesApp.Pages
         {
             InitializeComponent();
 
-            SetMenuTemplate();
-            SetComboBoxValues();
             SetViewModel();
+            SetValues();
         }
-
-        private void SetMenuTemplate()
-        {
-            MenuTemplate menuTemplate = new MenuTemplate();
-            menuTemplate.header.Text = "DODAJ PRZEPIS";
-            contentControlMenu.Content = menuTemplate;
-        }
-
-        private void SetComboBoxValues()
-        {
-            category.ItemsSource = RecipeData.categories;
-            category.SelectedIndex = 0;
-        }
-
         private void SetViewModel()
         {
             recipeViewModel = new RecipeViewModel();
             DataContext = recipeViewModel;
         }
 
+        private void SetValues()
+        {
+            menuControl.header.Text = "DODAJ PRZEPIS";
+            formControl.actionButton.Content = "DODAJ PRZEPIS";
+        }
+
         private void AddRecipe(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Message");
             Recipe recipe = new Recipe()
             {
-                Title = title.Text.Trim(),
-                Description = description.Text.Trim(),
-                Ingredients = ingredients.Text.Trim(),
-                Method = method.Text.Trim(),
-                Category = category.SelectedItem.ToString(),
+                Title = formControl.title.Text.Trim(),
+                Description = formControl.description.Text.Trim(),
+                Ingredients = formControl.ingredients.Text.Trim(),
+                Method = formControl.method.Text.Trim(),
+                Category = formControl.category.SelectedItem.ToString(),
                 Date = DateTime.Now
             };
             SqliteDataAccess.InsertRecipe(recipe);
@@ -76,9 +69,9 @@ namespace RecipesApp.Pages
             
             if (result == true){ 
                 string filename = openFileDialog.FileName;
-                file.Text = filename;
+                formControl.file.Text = filename;
 
-                image.Source = new BitmapImage(new Uri(filename));
+                formControl.image.Source = new BitmapImage(new Uri(filename));
             }
         }
     }

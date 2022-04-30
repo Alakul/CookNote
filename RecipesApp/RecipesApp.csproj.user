@@ -10,7 +10,7 @@
     <Compile Update="Pages\RecipeFormEdit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Templates\MenuTemplate.xaml.cs">
+    <Compile Update="Templates\FormTemplate.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\RecipeFormAdd.xaml.cs">
@@ -22,12 +22,15 @@
     <Compile Update="Pages\RecipeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Templates\MenuTemplate.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Dictionaries\ComboBoxDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Dictionaries\ListViewItemDictionary.xaml">
+    <Page Update="Dictionaries\TextBoxDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
@@ -36,7 +39,7 @@
     <Page Update="Pages\RecipeFormEdit.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Templates\MenuTemplate.xaml">
+    <Page Update="Templates\FormTemplate.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\RecipeFormAdd.xaml">
@@ -49,6 +52,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Dictionaries\ResourcesDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\MenuTemplate.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

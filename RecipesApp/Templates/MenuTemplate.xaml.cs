@@ -12,10 +12,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RecipesApp
+namespace RecipesApp.Templates
 {
     /// <summary>
-    /// Logika interakcji dla klasy MenuTemplate.xaml
+    /// Logika interakcji dla klasy MenuTemplate2.xaml
     /// </summary>
     public partial class MenuTemplate : UserControl
     {

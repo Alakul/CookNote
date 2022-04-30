@@ -1,18 +1,18 @@
-﻿<UserControl x:Class="RecipesApp.MenuTemplate"
+﻿<UserControl x:Class="RecipesApp.Templates.MenuTemplate"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:RecipesApp"
+             xmlns:local="clr-namespace:RecipesApp.Templates"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Border Background="{StaticResource PrimaryBrush}" Grid.Row="0">
+        <Border Background="{StaticResource PrimaryBrush}" Padding="10,0,10,0" Grid.Row="0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <Border Padding="15,10,10,10" Background="{StaticResource PrimaryBrush}" MouseDown="BackButton">
+                <Border Padding="10,12,10,12" Background="{StaticResource PrimaryBrush}" MouseDown="BackButton">
                     <Path x:Name="backPath" Style="{StaticResource backPath}" HorizontalAlignment="Left"/>
                 </Border>
-                <TextBlock x:Name="header" Foreground="{StaticResource WhiteBrush}" VerticalAlignment="Center" FontWeight="Bold" FontSize="13" MouseDown="BackButton">PODPIS</TextBlock>
+                <TextBlock x:Name="header" Style="{StaticResource textBlockMenu}" Padding="6,4,6,4" MouseDown="BackButton">PODPIS</TextBlock>
             </StackPanel>
         </Border>
     </Grid>

@@ -1,4 +1,5 @@
-﻿using RecipesApp.Models;
+﻿using Microsoft.Win32;
+using RecipesApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,16 +27,15 @@ namespace RecipesApp.Pages
         {
             InitializeComponent();
 
-            SetMenuTemplate();
+            SetValues();
             SetViewModel(recipe);
             recipeValue = recipe;
         }
 
-        private void SetMenuTemplate()
+        private void SetValues()
         {
-            MenuTemplate menuTemplate = new MenuTemplate();
-            menuTemplate.header.Text = "EDYTUJ PRZEPIS";
-            contentControlMenu.Content = menuTemplate;
+            menuControl.header.Text = "EDYTUJ PRZEPIS";
+            formControl.actionButton.Content = "EDYTUJ PRZEPIS";
         }
 
         private void SetViewModel(Recipe recipe)
@@ -49,22 +49,39 @@ namespace RecipesApp.Pages
             recipeViewModel.Ingredients = recipeFull.Ingredients;
             recipeViewModel.Method = recipeFull.Method;
 
-            category.ItemsSource = RecipeData.categories;
-            category.SelectedValue = recipeFull.Category;
+            formControl.category.ItemsSource = RecipeData.categories;
+            formControl.category.SelectedValue = recipeFull.Category;
 
             DataContext = recipeViewModel;
         }
 
         private void EditRecipe(object sender, RoutedEventArgs e)
         {
-            recipeValue.Title = title.Text.Trim();
-            recipeValue.Description = description.Text.Trim();
-            recipeValue.Ingredients = ingredients.Text.Trim();
-            recipeValue.Method = method.Text.Trim();
-            recipeValue.Category = category.Text.Trim();
+            MessageBox.Show("Message");
+            recipeValue.Title = formControl.title.Text.Trim();
+            recipeValue.Description = formControl.description.Text.Trim();
+            recipeValue.Ingredients = formControl.ingredients.Text.Trim();
+            recipeValue.Method = formControl.method.Text.Trim();
+            recipeValue.Category = formControl.category.Text.Trim();
             recipeValue.Date = DateTime.Now;
 
             SqliteDataAccess.UpdateRecipe(recipeValue);
+        }
+
+        private void SelectFileButton(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.DefaultExt = ".png";
+            openFileDialog.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+            var result = openFileDialog.ShowDialog();
+
+            if (result == true)
+            {
+                string filename = openFileDialog.FileName;
+                formControl.file.Text = filename;
+
+                formControl.image.Source = new BitmapImage(new Uri(filename));
+            }
         }
     }
 }
