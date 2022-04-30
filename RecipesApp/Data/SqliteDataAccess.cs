@@ -51,6 +51,16 @@ namespace RecipesApp
             return recipeFull;
         }
 
+        public static int CheckForRecipes(string title)
+        {
+            int results = 0;
+            using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
+            {
+                results = connection.Table<Recipe>().Where(c => c.Title == title).Count();
+            }
+            return results;
+        }
+
         public static List<Recipe> ListRecipes(string searchValue, string category, string orderValue, string orderType)
         {
             using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))

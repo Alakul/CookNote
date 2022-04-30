@@ -47,17 +47,22 @@ namespace RecipesApp.Pages
 
         private void AddRecipe(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Message");
-            Recipe recipe = new Recipe()
-            {
-                Title = formControl.title.Text.Trim(),
-                Description = formControl.description.Text.Trim(),
-                Ingredients = formControl.ingredients.Text.Trim(),
-                Method = formControl.method.Text.Trim(),
-                Category = formControl.category.SelectedItem.ToString(),
-                Date = DateTime.Now
-            };
-            SqliteDataAccess.InsertRecipe(recipe);
+            if (SqliteDataAccess.CheckForRecipes(formControl.title.Text.Trim())!=0) {
+                MessageBox.Show("Istnieje przepis o tym tytule!");
+            }
+            else {
+                MessageBox.Show("Message");
+                Recipe recipe = new Recipe()
+                {
+                    Title = formControl.title.Text.Trim(),
+                    Description = formControl.description.Text.Trim(),
+                    Ingredients = formControl.ingredients.Text.Trim(),
+                    Method = formControl.method.Text.Trim(),
+                    Category = formControl.category.SelectedItem.ToString(),
+                    Date = DateTime.Now
+                };
+                SqliteDataAccess.InsertRecipe(recipe);
+            }
         }
         
         private void SelectFileButton(object sender, RoutedEventArgs e)
