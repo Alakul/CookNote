@@ -83,10 +83,9 @@ namespace RecipesApp.Pages
         private void EditRecipe(object sender, RoutedEventArgs e)
         {
             if (recipeValue.Title != formControl.title.Text.Trim() && SqliteDataAccess.CheckForRecipes(formControl.title.Text.Trim()) != 0){
-                MessageBox.Show("Istnieje przepis o tym tytule!");
+                MessageBox.Show("Istnieje przepis o podanym tytule!");
             }
             else {
-                MessageBox.Show("Message");
                 recipeValue.Title = formControl.title.Text.Trim();
                 recipeValue.Description = formControl.description.Text.Trim();
                 recipeValue.Ingredients = formControl.ingredients.Text.Trim();
@@ -96,19 +95,24 @@ namespace RecipesApp.Pages
 
                 if (fileNameFull != ""){
                     string fileNameText = formControl.file.Text;
-                    string fileName = recipeValue.Id.ToString() + fileNameText.Substring(fileNameText.IndexOf('.'));
-                    
-                    string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
-                    Directory.CreateDirectory(imageFolder);
-                    string destinationPath = System.IO.Path.Combine(imageFolder, recipeValue.Image);
+                    if (fileNameText != ""){
+                        string fileName = recipeValue.Id.ToString() + fileNameText.Substring(fileNameText.IndexOf('.'));
 
-                    if (recipeValue.Image != ""){
-                        File.Delete(destinationPath);
+                        string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                        Directory.CreateDirectory(imageFolder);
+                        string destinationPath = System.IO.Path.Combine(imageFolder, recipeValue.Image);
+
+                        if (recipeValue.Image != ""){
+                            File.Delete(destinationPath);
+                        }
+
+                        destinationPath = System.IO.Path.Combine(imageFolder, fileName);
+                        File.Copy(fileNameFull, destinationPath);
+                        recipeValue.Image = fileName;
                     }
-
-                    destinationPath = System.IO.Path.Combine(imageFolder, fileName);
-                    File.Copy(fileNameFull, destinationPath);
-                    recipeValue.Image = fileName;
+                    else if (fileNameText == ""){
+                        recipeValue.Image = "";
+                    }
                 }
                 else if (fileNameFull == ""){
                     if (recipeValue.Image != ""){
@@ -121,6 +125,7 @@ namespace RecipesApp.Pages
                     }
                 }
                 SqliteDataAccess.UpdateRecipe(recipeValue);
+                MessageBox.Show("Pomyślnie edytowano przepis.");
             }
         }
 

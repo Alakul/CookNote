@@ -50,10 +50,9 @@ namespace RecipesApp.Pages
         private void AddRecipe(object sender, RoutedEventArgs e)
         {
             if (SqliteDataAccess.CheckForRecipes(formControl.title.Text.Trim())!=0) {
-                MessageBox.Show("Istnieje przepis o tym tytule!");
+                MessageBox.Show("Istnieje przepis o podanym tytule!");
             }
             else {
-                MessageBox.Show("Message");
                 Recipe recipe = new Recipe()
                 {
                     Title = formControl.title.Text.Trim(),
@@ -80,6 +79,7 @@ namespace RecipesApp.Pages
                     string destinationPath = System.IO.Path.Combine(imageFolder, fileName);
                     File.Copy(fileNameFull, destinationPath);
                 }
+                MessageBox.Show("Pomyślnie dodano przepis.");
             }
         }
 
