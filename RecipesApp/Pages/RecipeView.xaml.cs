@@ -41,11 +41,17 @@ namespace RecipesApp.Pages
             Recipe recipeFull = SqliteDataAccess.GetRecipe(recipe);
             
             title.Text = recipeFull.Title;
-            description.Text = recipeFull.Description;
+
+            if (recipeFull.Description == ""){
+                descriptionStackPanel.Visibility = Visibility.Collapsed;
+            }
+            else {
+                description.Text = recipeFull.Description;
+            }
+            
             category.Text = recipeFull.Category;
             ingredients.Text = recipeFull.Ingredients;
             method.Text = recipeFull.Method;
-            imageT.Text = recipeFull.Image;
 
             if (recipeFull.Image != ""){
                 string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
@@ -62,8 +68,8 @@ namespace RecipesApp.Pages
                 catch (FileNotFoundException){
                     image.Source = null;
                 }
-                catch (DirectoryNotFoundException)
-                {
+                catch (DirectoryNotFoundException){
+                    image.Source = null;
                 }
             }
         }
@@ -81,7 +87,6 @@ namespace RecipesApp.Pages
                 string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
                 Directory.CreateDirectory(imageFolder);
                 string destinationPath = System.IO.Path.Combine(imageFolder, recipeItem.Image);
-                //nie działa
                 image.Source = null;
 
                 File.Delete(destinationPath);

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RecipesApp.Pages"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="550" d:DesignWidth="800">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -60,7 +60,7 @@
         </StackPanel>
 
         <Border Padding="10,0,10,20" Grid.Row="2">
-            <ListView x:Name="recipesList" Height="315" ItemContainerStyle="{StaticResource ListViewItemStyle}" SelectedItem="{Binding Id}" ItemsSource="{Binding}" PreviewMouseLeftButtonUp="ListViewMouseLeftButtonDown" HorizontalContentAlignment="Stretch">
+            <ListView x:Name="recipesList" Height="415" ItemContainerStyle="{StaticResource ListViewItemStyle}" SelectedItem="{Binding Id}" ItemsSource="{Binding}" PreviewMouseLeftButtonUp="ListViewMouseLeftButtonDown" HorizontalContentAlignment="Stretch">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>

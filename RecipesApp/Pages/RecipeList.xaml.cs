@@ -38,6 +38,7 @@ namespace RecipesApp.Pages
         private void SetComboBoxValues()
         {
             List<string> categoryList = new List<string>(RecipeData.categories);
+            categoryList.Sort();
             categoryList.Insert(0, "Wszystko");
             category.ItemsSource = categoryList;
             category.SelectedIndex = 0;
@@ -87,11 +88,13 @@ namespace RecipesApp.Pages
                 Button button = (Button)sender;
                 Recipe item = button.DataContext as Recipe;
 
-                string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
-                Directory.CreateDirectory(imageFolder);
-                string destinationPath = System.IO.Path.Combine(imageFolder, item.Image);
-                File.Delete(destinationPath);
-
+                if (item.Image != "")
+                {
+                    string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                    Directory.CreateDirectory(imageFolder);
+                    string destinationPath = System.IO.Path.Combine(imageFolder, item.Image);
+                    File.Delete(destinationPath);
+                }
                 SqliteDataAccess.DeleteRecipe(item);
                 RecipesToList();
             }

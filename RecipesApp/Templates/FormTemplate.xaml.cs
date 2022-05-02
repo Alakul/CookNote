@@ -33,6 +33,8 @@ namespace RecipesApp.Templates
 
         private void SetComboBoxValues()
         {
+            List<string> list = RecipeData.categories;
+            list.Sort();
             category.ItemsSource = RecipeData.categories;
             category.SelectedIndex = 0;
         }

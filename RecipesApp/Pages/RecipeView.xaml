@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:RecipesApp.Pages"
              xmlns:tmpl="clr-namespace:RecipesApp.Templates"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="{StaticResource BackgroundBrush}">
+             d:DesignHeight="550" d:DesignWidth="800" Background="{StaticResource BackgroundBrush}">
     
     <Grid>
         <Grid.RowDefinitions>
@@ -18,50 +18,49 @@
         <tmpl:MenuTemplate x:Name="menuControl" Grid.Row="0"></tmpl:MenuTemplate>
 
         <Border Style="{StaticResource Border}" Grid.Row="1">
-            <ScrollViewer Height="325">
+            <ScrollViewer Height="420">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <StackPanel Orientation="Vertical" Grid.Column="0">
-                        <StackPanel Style="{StaticResource StackPanel}">
-                            <TextBlock x:Name="title" Style="{StaticResource TextBlockHeader}">Tytuł</TextBlock>
-                            <TextBlock x:Name="description" Style="{StaticResource TextBlock}">Opis</TextBlock>
+                    <Border Background="White" BorderBrush="{StaticResource PrimaryBrush}" BorderThickness="0.75" Padding="10" Grid.Column="1">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Style="{StaticResource StackPanel}">
+                                <TextBlock x:Name="title" Style="{StaticResource TextBlockHeader}" HorizontalAlignment="Center" FontSize="18">Tytuł</TextBlock>
+                            </StackPanel>
+
+                            <StackPanel x:Name="descriptionStackPanel" Style="{StaticResource StackPanel}">
+                                <TextBlock x:Name="description" Style="{StaticResource TextBlock}">Opis</TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Style="{StaticResource StackPanel}">
+                                <TextBlock Style="{StaticResource TextBlockHeader}">Kategoria</TextBlock>
+                                <TextBlock x:Name="category" Style="{StaticResource TextBlock}">Kategoria</TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Style="{StaticResource StackPanel}" Grid.Column="1">
+                                <Image x:Name="image"/>
+                            </StackPanel>
+
+                            <StackPanel Style="{StaticResource StackPanel}" Grid.Row="1" Grid.Column="0">
+                                <TextBlock Style="{StaticResource TextBlockHeader}" Text="Składniki"/>
+                                <TextBlock x:Name="ingredients" Style="{StaticResource TextBlock}">Składniki</TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Style="{StaticResource StackPanel}" Grid.Row="1" Grid.Column="1">
+                                <TextBlock Style="{StaticResource TextBlockHeader}" Text="Przygotowanie"/>
+                                <TextBlock x:Name="method" Style="{StaticResource TextBlock}">Przygotowanie</TextBlock>
+                            </StackPanel>
                         </StackPanel>
-
-                        <StackPanel Style="{StaticResource StackPanel}">
-                            <TextBlock Style="{StaticResource TextBlockHeader}">Kategoria</TextBlock>
-                            <TextBlock x:Name="category" Style="{StaticResource TextBlock}">Kategoria</TextBlock>
-                        </StackPanel>
-                    </StackPanel>
-
-                    <StackPanel Style="{StaticResource StackPanel}" Grid.Column="1">
-                        <TextBlock x:Name="imageT" Style="{StaticResource TextBlockHeader}"></TextBlock>
-                        <Image x:Name="image" Height="120"/>
-                    </StackPanel>
-                    
-                    <StackPanel Style="{StaticResource StackPanel}" Grid.Row="1" Grid.Column="0">
-                        <TextBlock Style="{StaticResource TextBlockHeader}" Text="Składniki"/>
-                        <TextBlock x:Name="ingredients" Style="{StaticResource TextBlock}">Składniki</TextBlock>
-                    </StackPanel>
-
-                    <StackPanel Style="{StaticResource StackPanel}" Grid.Row="1" Grid.Column="1">
-                        <TextBlock Style="{StaticResource TextBlockHeader}" Text="Przygotowanie"/>
-                        <TextBlock x:Name="method" Style="{StaticResource TextBlock}">Przygotowanie</TextBlock>
-                    </StackPanel>
-
-                    
+                    </Border>
                 </Grid>
             </ScrollViewer>
         </Border>
 
-        <Border BorderThickness="0,0,0,1" Background="{StaticResource WhiteBrush}" Grid.Row="2">
+        <Border Padding="2" Background="{StaticResource WhiteBrush}" Grid.Row="2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>

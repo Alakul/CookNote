@@ -267,6 +267,8 @@
     <!-- TextBlock -->
     <Style x:Key="TextBlock" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="13"></Setter>
+        <Setter Property="TextWrapping" Value="Wrap"></Setter>
+        <Setter Property="TextAlignment" Value="Justify"></Setter>
     </Style>
     <Style x:Key="TextBlockHeader" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="15"></Setter>

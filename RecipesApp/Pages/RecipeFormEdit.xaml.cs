@@ -65,16 +65,24 @@ namespace RecipesApp.Pages
                     formControl.file.Text = recipeFull.Image;
                     fileNameFull = bitmapImage.ToString();
                 }
-                catch (DirectoryNotFoundException){
-                }
                 catch (FileNotFoundException){
+                    formControl.image.Source = null;
+                    formControl.file.Text = "";
+                    fileNameFull = "";
+                }
+                catch (DirectoryNotFoundException){
+                    formControl.image.Source = null;
+                    formControl.file.Text = "";
+                    fileNameFull = "";
                 }
             }
             else if (recipeFull.Image == ""){
                 fileNameFull = "";
             }
 
-            formControl.category.ItemsSource = RecipeData.categories;
+            List<string> list = RecipeData.categories;
+            list.Sort();
+            formControl.category.ItemsSource = list;
             formControl.category.SelectedValue = recipeFull.Category;
 
             DataContext = recipeViewModel;
@@ -96,18 +104,21 @@ namespace RecipesApp.Pages
                 if (fileNameFull != ""){
                     string fileNameText = formControl.file.Text;
                     if (fileNameText != ""){
-                        string fileName = recipeValue.Id.ToString() + fileNameText.Substring(fileNameText.IndexOf('.'));
+                        string fileName = recipeValue.Id.ToString() + fileNameText.Substring(fileNameText.LastIndexOf('.'));
 
                         string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
                         Directory.CreateDirectory(imageFolder);
-                        string destinationPath = System.IO.Path.Combine(imageFolder, recipeValue.Image);
+                        string destinationPath = System.IO.Path.Combine(imageFolder, fileName);
+                        string path = System.IO.Path.Combine(imageFolder, recipeValue.Image);
 
-                        if (recipeValue.Image != ""){
-                            File.Delete(destinationPath);
+                        if (File.Exists(path) && destinationPath != path){
+                            File.Delete(path);
                         }
 
-                        destinationPath = System.IO.Path.Combine(imageFolder, fileName);
-                        File.Copy(fileNameFull, destinationPath);
+                        if (fileNameText != recipeValue.Image){
+                            File.Copy(fileNameFull, destinationPath, true);
+                        }
+
                         recipeValue.Image = fileName;
                     }
                     else if (fileNameText == ""){
