@@ -17,7 +17,7 @@
 
         <tmpl:MenuTemplate x:Name="menuControl" Grid.Row="0"></tmpl:MenuTemplate>
 
-        <Border Style="{StaticResource border}" Grid.Row="1">
+        <Border Style="{StaticResource Border}" Grid.Row="1">
             <ScrollViewer Height="325">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -30,29 +30,30 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Orientation="Vertical" Grid.Column="0">
-                        <StackPanel Style="{StaticResource stackPanel}">
-                            <TextBlock x:Name="title" Style="{StaticResource textBlockHeader}">Tytuł</TextBlock>
-                            <TextBlock x:Name="description" Style="{StaticResource textBlock}">Opis</TextBlock>
+                        <StackPanel Style="{StaticResource StackPanel}">
+                            <TextBlock x:Name="title" Style="{StaticResource TextBlockHeader}">Tytuł</TextBlock>
+                            <TextBlock x:Name="description" Style="{StaticResource TextBlock}">Opis</TextBlock>
                         </StackPanel>
 
-                        <StackPanel Style="{StaticResource stackPanel}">
-                            <TextBlock Style="{StaticResource textBlockHeader}">Kategoria</TextBlock>
-                            <TextBlock x:Name="category" Style="{StaticResource textBlock}">Kategoria</TextBlock>
+                        <StackPanel Style="{StaticResource StackPanel}">
+                            <TextBlock Style="{StaticResource TextBlockHeader}">Kategoria</TextBlock>
+                            <TextBlock x:Name="category" Style="{StaticResource TextBlock}">Kategoria</TextBlock>
                         </StackPanel>
                     </StackPanel>
 
-                    <StackPanel Style="{StaticResource stackPanel}" Grid.Column="1">
-                        <Image Height="120" Source="/Images/mch.jpg"/>
+                    <StackPanel Style="{StaticResource StackPanel}" Grid.Column="1">
+                        <TextBlock x:Name="imageT" Style="{StaticResource TextBlockHeader}"></TextBlock>
+                        <Image x:Name="image" Height="120"/>
                     </StackPanel>
                     
-                    <StackPanel Style="{StaticResource stackPanel}" Grid.Row="1" Grid.Column="0">
-                        <TextBlock Style="{StaticResource textBlockHeader}" Text="Składniki"/>
-                        <TextBlock x:Name="ingredients" Style="{StaticResource textBlock}">Składniki</TextBlock>
+                    <StackPanel Style="{StaticResource StackPanel}" Grid.Row="1" Grid.Column="0">
+                        <TextBlock Style="{StaticResource TextBlockHeader}" Text="Składniki"/>
+                        <TextBlock x:Name="ingredients" Style="{StaticResource TextBlock}">Składniki</TextBlock>
                     </StackPanel>
 
-                    <StackPanel Style="{StaticResource stackPanel}" Grid.Row="1" Grid.Column="1">
-                        <TextBlock Style="{StaticResource textBlockHeader}" Text="Przygotowanie"/>
-                        <TextBlock x:Name="method" Style="{StaticResource textBlock}">Przygotowanie</TextBlock>
+                    <StackPanel Style="{StaticResource StackPanel}" Grid.Row="1" Grid.Column="1">
+                        <TextBlock Style="{StaticResource TextBlockHeader}" Text="Przygotowanie"/>
+                        <TextBlock x:Name="method" Style="{StaticResource TextBlock}">Przygotowanie</TextBlock>
                     </StackPanel>
 
                     
@@ -68,12 +69,12 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0" Orientation="Horizontal">
-                    <Button Click="EditButton" Style="{StaticResource buttonList}">Edytuj</Button>
-                    <Button Click="DeleteButton" Style="{StaticResource buttonList}">Usuń</Button>
+                    <Button Click="EditButton" Style="{StaticResource ButtonList}">Edytuj</Button>
+                    <Button Click="DeleteButton" Style="{StaticResource ButtonList}">Usuń</Button>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Visibility="Hidden" Style="{StaticResource buttonList}">Zapisz</Button>
-                    <Button Visibility="Hidden" Style="{StaticResource buttonList}">Drukuj</Button>
+                    <Button Visibility="Hidden" Style="{StaticResource ButtonList}">Zapisz</Button>
+                    <Button Visibility="Hidden" Style="{StaticResource ButtonList}">Drukuj</Button>
                 </StackPanel>
             </Grid>
         </Border>

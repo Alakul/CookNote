@@ -1,6 +1,7 @@
 ﻿using RecipesApp.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -85,6 +86,12 @@ namespace RecipesApp.Pages
             else {
                 Button button = (Button)sender;
                 Recipe item = button.DataContext as Recipe;
+
+                string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                Directory.CreateDirectory(imageFolder);
+                string destinationPath = System.IO.Path.Combine(imageFolder, item.Image);
+                File.Delete(destinationPath);
+
                 SqliteDataAccess.DeleteRecipe(item);
                 RecipesToList();
             }

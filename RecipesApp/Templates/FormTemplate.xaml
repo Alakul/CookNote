@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Border Style="{StaticResource border}" Grid.Row="1">
+        <Border Style="{StaticResource Border}" Grid.Row="1">
             <ScrollViewer x:Name="scrollViewer" Height="350" VerticalScrollBarVisibility="Auto">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -21,9 +21,9 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Orientation="Vertical" Margin="0,0,10,0" Grid.Column="0" Grid.Row="0">
-                        <StackPanel Style="{StaticResource stackPanel}">
-                            <TextBlock Style="{StaticResource textBlockHeader}">Tytuł</TextBlock>
-                            <TextBox x:Name="title" Style="{StaticResource textBoxInError}">
+                        <StackPanel Style="{StaticResource StackPanel}">
+                            <TextBlock Style="{StaticResource TextBlockHeader}">Tytuł</TextBlock>
+                            <TextBox x:Name="title" Style="{StaticResource TextBoxInError}">
                                 <TextBox.Text>
                                     <Binding Path="Title" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                         <Binding.ValidationRules>
@@ -33,9 +33,9 @@
                                 </TextBox.Text>
                             </TextBox>
                         </StackPanel>
-                        <StackPanel Style="{StaticResource stackPanel}">
-                            <TextBlock Style="{StaticResource textBlockHeader}">Opis</TextBlock>
-                            <TextBox x:Name="description" Height="100" Style="{DynamicResource TextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible">
+                        <StackPanel Style="{StaticResource StackPanel}">
+                            <TextBlock Style="{StaticResource TextBlockHeader}">Opis</TextBlock>
+                            <TextBox x:Name="description" Height="100" Style="{StaticResource TextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible">
                                 <TextBox.Text>
                                     <Binding Path="Description" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                         <Binding.ValidationRules>
@@ -45,25 +45,42 @@
                                 </TextBox.Text>
                             </TextBox>
                         </StackPanel>
-                        <StackPanel Style="{StaticResource stackPanel}">
-                            <TextBlock Style="{StaticResource textBlockHeader}">Kategoria</TextBlock>
-                            <ComboBox x:Name="category" Template="{DynamicResource ComboBoxTemplate}" ItemContainerStyle="{StaticResource comboBoxItem}"></ComboBox>
+                        <StackPanel Style="{StaticResource StackPanel}">
+                            <TextBlock Style="{StaticResource TextBlockHeader}">Kategoria</TextBlock>
+                            <ComboBox x:Name="category" Template="{StaticResource ComboBoxTemplate}" ItemContainerStyle="{StaticResource ComboBoxItem}"></ComboBox>
                         </StackPanel>
                     </StackPanel>
 
                     <StackPanel Margin="10,0,0,0" Grid.Column="1">
-                        <StackPanel Style="{StaticResource stackPanel}">
-                            <TextBlock Style="{StaticResource textBlockHeader}">Obraz</TextBlock>
-                            <Button Click="SelectFileButton">Wybierz plik</Button>
-                            <TextBlock x:Name="file" TextWrapping="Wrap"></TextBlock>
-                            <Image x:Name="image" Grid.Column="1" Source="/Images/mch.jpg" Height="195" VerticalAlignment="Center"/>
+                        <StackPanel Style="{StaticResource StackPanel}">
+                            <TextBlock Style="{StaticResource TextBlockHeader}">Obraz</TextBlock>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Button Style="{StaticResource Button}" Click="SelectFileButton" Grid.Column="0">WYBIERZ</Button>
+                                <Border Grid.Column="1" Style="{StaticResource BorderTextBox}">
+                                    <TextBlock x:Name="file"></TextBlock>
+                                </Border>
+                                <Button Style="{StaticResource Button}" Click="DeleteFileButton" Grid.Column="2">USUŃ</Button>
+
+                                <Image x:Name="image" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,10,0,0" Height="200"/>
+                            </Grid>
                         </StackPanel>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,10,0" Grid.Row="1" Grid.Column="0">
-                        <StackPanel Style="{StaticResource stackPanel}">
-                            <TextBlock Style="{StaticResource textBlockHeader}">Składniki</TextBlock>
-                            <TextBox x:Name="ingredients" Height="150" Style="{StaticResource textBoxInError}" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible">
+                        <StackPanel Style="{StaticResource StackPanel}">
+                            <TextBlock Style="{StaticResource TextBlockHeader}">Składniki</TextBlock>
+                            <TextBox x:Name="ingredients" Height="150" Style="{StaticResource TextBoxInError}" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible">
                                 <TextBox.Text>
                                     <Binding Path="Ingredients" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                         <Binding.ValidationRules>
@@ -76,9 +93,9 @@
                     </StackPanel>
 
                     <StackPanel Margin="10,0,0,0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
-                        <StackPanel Style="{StaticResource stackPanel}">
-                            <TextBlock Style="{StaticResource textBlockHeader}">Przygotowanie</TextBlock>
-                            <TextBox x:Name="method" Height="150" Style="{StaticResource textBoxInError}" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible">
+                        <StackPanel Style="{StaticResource StackPanel}">
+                            <TextBlock Style="{StaticResource TextBlockHeader}">Przygotowanie</TextBlock>
+                            <TextBox x:Name="method" Height="150" Style="{StaticResource TextBoxInError}" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible">
                                 <TextBox.Text>
                                     <Binding Path="Method" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                                         <Binding.ValidationRules>
@@ -90,10 +107,10 @@
                         </StackPanel>
                     </StackPanel>
 
-                    <StackPanel Style="{StaticResource stackPanel}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                    <StackPanel Style="{StaticResource StackPanel}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
                         <Button x:Name="actionButton" Content="DODAJ PRZEPIS" Click="RecipeAction" HorizontalAlignment="Center">
                             <Button.Style>
-                                <Style BasedOn="{StaticResource button}" TargetType="{x:Type Button}">
+                                <Style BasedOn="{StaticResource Button}" TargetType="{x:Type Button}">
                                     <Setter Property="FontSize" Value="13"/>
                                     <Setter Property="IsEnabled" Value="false"/>
                                     <Style.Triggers>

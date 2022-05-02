@@ -16,118 +16,52 @@
     <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource Background}"/>
     <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}"/>
 
+    <!-- Icon -->
+    <Style x:Key="SearchPath" TargetType="{x:Type Path}">
+        <Setter Property="Height" Value="14" />
+        <Setter Property="Width" Value="14" />
+        <Setter Property="Fill" Value="White" />
+        <Setter Property="Stretch" Value="Fill" />
+        <Setter Property="Data" Value="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 
+              87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 
+              177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 
+              0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 
+              128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=IsMouseOver}" Value="True">
+                <Setter Property="Fill" Value="{StaticResource PrimaryLightBrush}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="BackPath" TargetType="{x:Type Path}">
+        <Setter Property="Height" Value="14" />
+        <Setter Property="Width" Value="14" />
+        <Setter Property="Fill" Value="White" />
+        <Setter Property="Stretch" Value="Fill" />
+        <Setter Property="Data" Value="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 
+                12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 
+                448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 
+                32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Border}, Path=IsMouseOver}" Value="True">
+                <Setter Property="Fill" Value="{StaticResource PrimaryLightBrush}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    
     <!-- Border -->
-    <Style x:Key="border" TargetType="{x:Type Border}">
+    <Style x:Key="Border" TargetType="{x:Type Border}">
         <Setter Property="Padding" Value="10"></Setter>
     </Style>
-
-    <!-- TextBlock -->
-    <Style x:Key="textBlock" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize" Value="13"></Setter>
-    </Style>
-    <Style x:Key="textBlockHeader" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize" Value="15"></Setter>
-        <Setter Property="Margin" Value="6,0,0,4"/>
-    </Style>
-    <Style x:Key="textBlockMenu" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize" Value="13"></Setter>
-        <Setter Property="FontWeight" Value="Bold"></Setter>
-        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}"></Setter>
-        <Setter Property="VerticalAlignment" Value="Center"></Setter>
-    </Style>
-    <Style x:Key="textBlockHorizontal" TargetType="{x:Type TextBlock}">
-        <Setter Property="Margin" Value="0,0,8,0"></Setter>
-        <Setter Property="FontSize" Value="13"></Setter>
-        <Setter Property="VerticalAlignment" Value="Center"></Setter>
-    </Style>
-
-    <!-- TextBox -->
-    <SolidColorBrush x:Key="TextBox.Static.Border" Color="{StaticResource PrimaryDark}"/>
-    <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="{StaticResource Primary}"/>
-    <SolidColorBrush x:Key="TextBox.Focus.Border" Color="{StaticResource Primary}"/>
-    <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
+    <Style x:Key="BorderTextBox" TargetType="{x:Type Border}">
         <Setter Property="Padding" Value="4"></Setter>
-        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
-        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
-        <Setter Property="HorizontalContentAlignment" Value="Left"/>
-        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-        <Setter Property="AllowDrop" Value="true"/>
-        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
-        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="True">
-                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Style.Triggers>
-            <MultiTrigger>
-                <MultiTrigger.Conditions>
-                    <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
-                    <Condition Property="IsSelectionActive" Value="false"/>
-                </MultiTrigger.Conditions>
-                <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
-            </MultiTrigger>
-        </Style.Triggers>
-    </Style>
-    <Style x:Key="textBoxInError" TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextBoxStyle}">
-        <Style.Triggers>
-            <Trigger Property="Validation.HasError" Value="true">
-                <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-    
-    
-    
-    <Style x:Key="textBox" TargetType="{x:Type TextBox}">
-        <Setter Property="Padding" Value="4"></Setter>
-        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border x:Name="border" 
-                        CornerRadius="0" 
-                        BorderBrush="{StaticResource PrimaryDarkBrush}" 
-                        BorderThickness="0.75" 
-                        Background="#fff">
-                        <ScrollViewer x:Name="PART_ContentHost" 
-                            Focusable="false" 
-                            HorizontalScrollBarVisibility="Hidden" 
-                            VerticalScrollBarVisibility="Hidden"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    
-    
-    
-    
-    <!-- StackPanel -->
-    <Style x:Key="stackPanel" TargetType="{x:Type StackPanel}">
-        <Setter Property="Margin" Value="10"></Setter>
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="BorderThickness" Value="0.75"></Setter>
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryDarkBrush}"></Setter>
     </Style>
 
     <!-- Button -->
-    <Style x:Key="button" TargetType="{x:Type Button}">
+    <Style x:Key="Button" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{StaticResource PrimaryBrush}"></Setter>
         <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}"></Setter>
         <Setter Property="Foreground" Value="White"></Setter>
@@ -149,7 +83,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style x:Key="buttonMenu" TargetType="{x:Type Button}" BasedOn="{StaticResource button}">
+    <Style x:Key="ButtonMenu" TargetType="{x:Type Button}" BasedOn="{StaticResource Button}">
         <Setter Property="FontSize" Value="13"></Setter>
         <Setter Property="Margin" Value="0"></Setter>
         <Setter Property="Template">
@@ -163,7 +97,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="buttonList" TargetType="{x:Type Button}">
+    <Style x:Key="ButtonList" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Transparent"></Setter>
         <Setter Property="BorderBrush" Value="Transparent"></Setter>
         <Setter Property="Margin" Value="4"></Setter>
@@ -185,9 +119,18 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
-    <!-- ComboBox -->
-    <Style x:Key="comboBoxItem" TargetType="{x:Type ComboBoxItem}">
+    <!-- ComboBoxItem -->
+    <Style x:Key="ComboBoxItem" TargetType="{x:Type ComboBoxItem}">
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
                 <Setter Property="Background" Value="{StaticResource PrimaryLightBrush}" />
@@ -262,15 +205,6 @@
     </Style>
 
     <!-- ListViewItem -->
-    <Style x:Key="FocusVisual">
-        <Setter Property="Control.Template">
-            <Setter.Value>
-                <ControlTemplate>
-                    <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
     <SolidColorBrush x:Key="Item.MouseOver.Background" Color="{StaticResource PrimaryLight}"/>
     <SolidColorBrush x:Key="Item.MouseOver.Border" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="Item.SelectedActive.Background" Color="{StaticResource PrimaryLight}"/>
@@ -325,42 +259,104 @@
         </Setter>
     </Style>
 
+    <!-- StackPanel -->
+    <Style x:Key="StackPanel" TargetType="{x:Type StackPanel}">
+        <Setter Property="Margin" Value="10"></Setter>
+    </Style>
 
-    
-    
-    
+    <!-- TextBlock -->
+    <Style x:Key="TextBlock" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="13"></Setter>
+    </Style>
+    <Style x:Key="TextBlockHeader" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="15"></Setter>
+        <Setter Property="Margin" Value="6,0,0,4"/>
+    </Style>
+    <Style x:Key="TextBlockMenu" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="13"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
+    <Style x:Key="TextBlockHorizontal" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="0,0,8,0"></Setter>
+        <Setter Property="FontSize" Value="13"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
 
-    <!-- Icons -->
-    <Style x:Key="searchPath" TargetType="{x:Type Path}">
-        <Setter Property="Height" Value="14" />
-        <Setter Property="Width" Value="14" />
-        <Setter Property="Fill" Value="White" />
-        <Setter Property="Stretch" Value="Fill" />
-        <Setter Property="Data" Value="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 
-              87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 
-              177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 
-              0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 
-              128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+    <!-- TextBox -->
+    <Style x:Key="textBox" TargetType="{x:Type TextBox}">
+        <Setter Property="Padding" Value="4"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="border" 
+                        CornerRadius="0" 
+                        BorderBrush="{StaticResource PrimaryDarkBrush}" 
+                        BorderThickness="0.75" 
+                        Background="#fff">
+                        <ScrollViewer x:Name="PART_ContentHost" 
+                            Focusable="false" 
+                            HorizontalScrollBarVisibility="Hidden" 
+                            VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <SolidColorBrush x:Key="TextBox.Static.Border" Color="{StaticResource PrimaryDark}"/>
+    <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="{StaticResource Primary}"/>
+    <SolidColorBrush x:Key="TextBox.Focus.Border" Color="{StaticResource Primary}"/>
+    <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Padding" Value="4"></Setter>
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="0.75"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="True">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=IsMouseOver}" Value="True">
-                <Setter Property="Fill" Value="{StaticResource PrimaryLightBrush}"/>
-            </DataTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                    <Condition Property="IsSelectionActive" Value="false"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+            </MultiTrigger>
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="backPath" TargetType="{x:Type Path}">
-        <Setter Property="Height" Value="14" />
-        <Setter Property="Width" Value="14" />
-        <Setter Property="Fill" Value="White" />
-        <Setter Property="Stretch" Value="Fill" />
-        <Setter Property="Data" Value="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 
-                12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 
-                448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 
-                32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z" />
+    <Style x:Key="TextBoxInError" TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextBoxStyle}">
         <Style.Triggers>
-            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Border}, Path=IsMouseOver}" Value="True">
-                <Setter Property="Fill" Value="{StaticResource PrimaryLightBrush}"/>
-            </DataTrigger>
+            <Trigger Property="Validation.HasError" Value="true">
+                <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
 </ResourceDictionary>

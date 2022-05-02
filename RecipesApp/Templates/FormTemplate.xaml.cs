@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,7 @@ namespace RecipesApp.Templates
         public delegate void MyControlClickEvent(object sender, RoutedEventArgs e);
         public event MyControlClickEvent RecipeButton;
         public event MyControlClickEvent ImageButton;
+        public event MyControlClickEvent DeleteImageButton;
 
         public FormTemplate()
         {
@@ -43,6 +45,11 @@ namespace RecipesApp.Templates
         private void SelectFileButton(object sender, RoutedEventArgs e)
         {
             ImageButton?.Invoke(sender, e);
+        }
+
+        private void DeleteFileButton(object sender, RoutedEventArgs e)
+        {
+            DeleteImageButton?.Invoke(sender, e);
         }
     }
 }

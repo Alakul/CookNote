@@ -10,9 +10,9 @@
         <Border Background="{StaticResource PrimaryBrush}" Padding="10,0,10,0" Grid.Row="0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
                 <Border Padding="10,12,10,12" Background="{StaticResource PrimaryBrush}" MouseDown="BackButton">
-                    <Path x:Name="backPath" Style="{StaticResource backPath}" HorizontalAlignment="Left"/>
+                    <Path x:Name="backPath" Style="{StaticResource BackPath}" HorizontalAlignment="Left"/>
                 </Border>
-                <TextBlock x:Name="header" Style="{StaticResource textBlockMenu}" Padding="6,4,6,4" MouseDown="BackButton">PODPIS</TextBlock>
+                <TextBlock x:Name="header" Style="{StaticResource TextBlockMenu}" Padding="6,4,6,4" MouseDown="BackButton">PODPIS</TextBlock>
             </StackPanel>
         </Border>
     </Grid>

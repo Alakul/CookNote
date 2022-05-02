@@ -4,6 +4,7 @@ using RecipesApp.Templates;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -25,6 +26,7 @@ namespace RecipesApp.Pages
     {
         List<Tuple<string, string, string>> ingList = new List<Tuple<string, string, string>>();
         RecipeViewModel recipeViewModel;
+        string fileNameFull;
 
         public RecipeFormAdd()
         {
@@ -62,22 +64,49 @@ namespace RecipesApp.Pages
                     Date = DateTime.Now
                 };
                 SqliteDataAccess.InsertRecipe(recipe);
+                string fileNameText = formControl.file.Text;
+
+                if (fileNameText == ""){
+                    recipe.Image = "";
+                    SqliteDataAccess.UpdateRecipe(recipe);
+                }
+                else if (fileNameText != ""){
+                    recipe.Image = recipe.Id.ToString() + fileNameText.Substring(fileNameText.IndexOf('.'));
+                    SqliteDataAccess.UpdateRecipe(recipe);
+
+                    string fileName = recipe.Image;
+                    string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                    Directory.CreateDirectory(imageFolder);
+                    string destinationPath = System.IO.Path.Combine(imageFolder, fileName);
+                    File.Copy(fileNameFull, destinationPath);
+                }
             }
         }
-        
+
         private void SelectFileButton(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.DefaultExt = ".png";
             openFileDialog.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
-            var result = openFileDialog.ShowDialog();
-            
-            if (result == true){ 
-                string filename = openFileDialog.FileName;
-                formControl.file.Text = filename;
+            bool? result = openFileDialog.ShowDialog();
 
+            if (result == true)
+            {
+                string filename = openFileDialog.FileName;
+                string imagePath = filename.ToString();
+                imagePath = imagePath.Substring(imagePath.LastIndexOf("\\"));
+                imagePath = imagePath.Remove(0, 1);
+
+                fileNameFull = filename;
+                formControl.file.Text = imagePath;
                 formControl.image.Source = new BitmapImage(new Uri(filename));
             }
+        }
+
+        private void DeleteFileButton(object sender, RoutedEventArgs e)
+        {
+            formControl.file.Text = "";
+            formControl.image.Source = null;
+            fileNameFull = null;
         }
     }
 }

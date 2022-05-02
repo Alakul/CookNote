@@ -65,6 +65,7 @@ namespace RecipesApp
         {
             using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
             {
+                connection.CreateTable<Recipe>();
                 if (category == ""){
                     if (orderType == "ascending"){
                         if (orderValue == "title"){

@@ -53,6 +53,6 @@ C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Genera
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeFormEdit.g.cs
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeFormEdit.baml
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Dictionaries\ComboBoxDictionary.baml
-C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Dictionaries\TextBoxDictionary.baml
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Templates\FormTemplate.g.cs
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Templates\FormTemplate.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Dictionaries\TemplatesDictionary.baml

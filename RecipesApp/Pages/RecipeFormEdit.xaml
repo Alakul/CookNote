@@ -14,6 +14,6 @@
         </Grid.RowDefinitions>
 
         <tmpl:MenuTemplate x:Name="menuControl" Grid.Row="0"></tmpl:MenuTemplate>
-        <tmpl:FormTemplate x:Name="formControl" Grid.Row="1" RecipeButton="EditRecipe" ImageButton="SelectFileButton"></tmpl:FormTemplate>
+        <tmpl:FormTemplate x:Name="formControl" Grid.Row="1" RecipeButton="EditRecipe" ImageButton="SelectFileButton" DeleteImageButton="DeleteFileButton"></tmpl:FormTemplate>
     </Grid>
 </UserControl>

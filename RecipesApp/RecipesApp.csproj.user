@@ -30,7 +30,7 @@
     <Page Update="Dictionaries\ComboBoxDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Dictionaries\TextBoxDictionary.xaml">
+    <Page Update="Dictionaries\TemplatesDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
