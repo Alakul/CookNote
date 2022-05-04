@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\alicj\source\repos\WPF - CookNote\CookNote\App.xaml
-10-2103746381
+11-1110137638
 
-16332821604
+172103461208
 2001829856527
-Dictionaries\ComboBoxDictionary.xaml;Dictionaries\ResourcesDictionary.xaml;Dictionaries\TemplatesDictionary.xaml;MainWindow.xaml;Pages\RecipeFormAdd.xaml;Pages\RecipeFormEdit.xaml;Pages\RecipeList.xaml;Pages\RecipeView.xaml;Templates\FormTemplate.xaml;Templates\MenuTemplate.xaml;
+Dictionaries\ComboBoxDictionary.xaml;Dictionaries\ResourcesDictionary.xaml;Dictionaries\TemplatesDictionary.xaml;MainWindow.xaml;Pages\MainMenu.xaml;Pages\RecipeFormAdd.xaml;Pages\RecipeFormEdit.xaml;Pages\RecipeList.xaml;Pages\RecipeView.xaml;Templates\FormTemplate.xaml;Templates\MenuTemplate.xaml;
 
 False
 

@@ -10,7 +10,7 @@ namespace CookNote
         {
             InitializeComponent();
             Switcher.pageSwitcher = this;
-            Switcher.Switch(new RecipesList());
+            Switcher.Switch(new MainMenu());
         }
 
         public void Navigate(UserControl nextPage)

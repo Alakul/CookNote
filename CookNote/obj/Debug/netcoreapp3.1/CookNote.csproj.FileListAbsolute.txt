@@ -154,7 +154,6 @@ C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runt
 C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
 C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
-C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.csproj.AssemblyReference.cache
 C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Dictionaries\ComboBoxDictionary.baml
 C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Dictionaries\ResourcesDictionary.baml
 C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Dictionaries\TemplatesDictionary.baml
@@ -186,3 +185,6 @@ C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Cook
 C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.dll
 C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.pdb
 C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.genruntimeconfig.cache
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Pages\MainMenu.g.cs
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Pages\MainMenu.baml
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.csproj.AssemblyReference.cache

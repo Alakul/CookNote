@@ -9,7 +9,6 @@ namespace CookNote.Pages
 {
     public partial class RecipesList : UserControl
     {
-        private List<Recipe> recipes;
         string categoryName;
         string orderValue;
         string orderType;
@@ -42,10 +41,10 @@ namespace CookNote.Pages
             categoryName = "";
             orderValue = "title";
             orderType = "ascending";
-            recipes = new List<Recipe>();
+            
         }
 
-        private void AddRecipe(object sender, RoutedEventArgs e)
+        private void AddRecipeButton(object sender, RoutedEventArgs e)
         {
             Switcher.Switch(new RecipeFormAdd());
         }
@@ -130,10 +129,15 @@ namespace CookNote.Pages
             recipesList.ItemsSource = recipes;
         }
 
-        private void SearchForRecipes(object sender, RoutedEventArgs e)
+        private void SearchForRecipesButton(object sender, RoutedEventArgs e)
         {
             searchValue = search.Text;
             RecipesToList();
+        }
+
+        private void BackButton(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new MainMenu());
         }
     }
 }

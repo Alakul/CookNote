@@ -22,10 +22,13 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0" Orientation="Horizontal">
-                    <TextBlock Style="{StaticResource TextBlockMenu}">LISTA PRZEPISÓW</TextBlock>
+                    <Border Padding="0,0,10,0" Background="{StaticResource PrimaryBrush}" MouseDown="BackButton">
+                        <Path x:Name="backPath" Style="{StaticResource BackPath}" HorizontalAlignment="Left"/>
+                    </Border>
+                    <TextBlock Style="{StaticResource TextBlockMenu}" Padding="6,0,6,0">LISTA PRZEPISÓW</TextBlock>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Style="{StaticResource ButtonMenu}" Click="AddRecipe">DODAJ PRZEPIS</Button>
+                    <Button Style="{StaticResource ButtonMenu}" Click="AddRecipeButton">DODAJ PRZEPIS</Button>
                 </StackPanel>
             </Grid>
         </Border>
@@ -50,7 +53,7 @@
 
                 <TextBlock Style="{StaticResource TextBlockHorizontal}" HorizontalAlignment="Right" Grid.Column="3">Wyszukaj</TextBlock>
                 <TextBox x:Name="search" Style="{StaticResource TextBoxStyle}" Grid.Column="4" Grid.ColumnSpan="2"></TextBox>
-                <Button Style="{StaticResource Button}" Click="SearchForRecipes" Grid.Column="6">
+                <Button Style="{StaticResource Button}" Click="SearchForRecipesButton" Grid.Column="6">
                     <Path x:Name="searchPath" Style="{StaticResource SearchPath}"/>
                 </Button>
 

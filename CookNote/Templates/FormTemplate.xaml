@@ -108,7 +108,7 @@
                     </StackPanel>
 
                     <StackPanel Style="{StaticResource StackPanel}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-                        <Button x:Name="actionButton" Content="DODAJ PRZEPIS" Click="RecipeAction" HorizontalAlignment="Center">
+                        <Button x:Name="actionButton" Content="DODAJ PRZEPIS" Click="RecipeActionButton" HorizontalAlignment="Center">
                             <Button.Style>
                                 <Style BasedOn="{StaticResource Button}" TargetType="{x:Type Button}">
                                     <Setter Property="FontSize" Value="13"/>

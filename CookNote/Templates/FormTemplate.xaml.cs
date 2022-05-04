@@ -26,7 +26,7 @@ namespace CookNote.Templates
             category.SelectedIndex = 0;
         }
 
-        private void RecipeAction(object sender, RoutedEventArgs e)
+        private void RecipeActionButton(object sender, RoutedEventArgs e)
         {
             RecipeButton?.Invoke(sender, e);
         }
