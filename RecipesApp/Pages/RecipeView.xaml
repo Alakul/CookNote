@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="800" Background="{StaticResource BackgroundBrush}">
     
-    <Grid>
+    <Grid x:Name="grid">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -72,8 +72,8 @@
                     <Button Click="DeleteButton" Style="{StaticResource ButtonList}">Usuń</Button>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Visibility="Hidden" Style="{StaticResource ButtonList}">Zapisz</Button>
-                    <Button Visibility="Hidden" Style="{StaticResource ButtonList}">Drukuj</Button>
+                    <Button Style="{StaticResource ButtonList}" Click="SaveToTXTButton">Zapisz do pliku TXT</Button>
+                    <Button Visibility="Collapsed" Style="{StaticResource ButtonList}">Zapisz do PDF</Button>
                 </StackPanel>
             </Grid>
         </Border>

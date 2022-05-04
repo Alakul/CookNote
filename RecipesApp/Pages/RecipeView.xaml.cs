@@ -1,6 +1,11 @@
-﻿using RecipesApp.Models;
+﻿using Microsoft.Win32;
+using PdfSharp.Drawing;
+using PdfSharp.Drawing.Layout;
+using PdfSharp.Pdf;
+using RecipesApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows;
@@ -39,16 +44,13 @@ namespace RecipesApp.Pages
         private void SetRecipeValues(Recipe recipe)
         {
             Recipe recipeFull = SqliteDataAccess.GetRecipe(recipe);
-            
             title.Text = recipeFull.Title;
-
             if (recipeFull.Description == ""){
                 descriptionStackPanel.Visibility = Visibility.Collapsed;
             }
             else {
                 description.Text = recipeFull.Description;
             }
-            
             category.Text = recipeFull.Category;
             ingredients.Text = recipeFull.Ingredients;
             method.Text = recipeFull.Method;
@@ -93,6 +95,37 @@ namespace RecipesApp.Pages
 
                 SqliteDataAccess.DeleteRecipe(recipeItem);
                 Switcher.Switch(new RecipesList());
+            }
+        }
+
+        private void SaveToTXTButton(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text file|*.txt";
+            bool? result = saveFileDialog.ShowDialog();
+
+            if (result == true){
+                using (StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName, false))
+                {
+                    streamWriter.WriteLine(recipeItem.Title);
+                    streamWriter.WriteLine("");
+                    if (recipeItem.Description != ""){
+                        streamWriter.WriteLine(recipeItem.Description);
+                        streamWriter.WriteLine("");
+                    }
+                    streamWriter.WriteLine("Kategoria");
+                    streamWriter.WriteLine(recipeItem.Category);
+                    streamWriter.WriteLine("");
+
+                    streamWriter.WriteLine("Składniki");
+                    streamWriter.WriteLine(recipeItem.Ingredients);
+                    streamWriter.WriteLine("");
+
+                    streamWriter.WriteLine("Przygotowanie");
+                    streamWriter.WriteLine(recipeItem.Method);
+
+                    streamWriter.Close();
+                }
             }
         }
     }

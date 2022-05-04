@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "LcvS3WS+94z5dEPsBkH9S+gveoL2ppx8IdDOOv7GMiGF4JTv9rqsvNWMD16Inc6ur8UpQcT5FSq+Bde8vy4C/w==",
+  "dgSpecHash": "hyhKrE+0twFE4A0I4gp/43OynI7rrz1tok2a9VqZjAIJQ4R80n+YZFWb7OJb9UuvfmXRBDTmrS2GHn7PxKvGfg==",
   "success": true,
   "projectFilePath": "C:\\Users\\alicj\\source\\repos\\RecipesApp\\RecipesApp\\RecipesApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alicj\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\alicj\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
     "C:\\Users\\alicj\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
+    "C:\\Users\\alicj\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\alicj\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\alicj\\.nuget\\packages\\sqlite-net-pcl\\1.8.116\\sqlite-net-pcl.1.8.116.nupkg.sha512",
     "C:\\Users\\alicj\\.nuget\\packages\\sqlitenetextensions\\2.1.0\\sqlitenetextensions.2.1.0.nupkg.sha512",
@@ -17,6 +18,7 @@
     "C:\\Users\\alicj\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",
     "C:\\Users\\alicj\\.nuget\\packages\\system.diagnostics.debug\\4.0.11\\system.diagnostics.debug.4.0.11.nupkg.sha512",
     "C:\\Users\\alicj\\.nuget\\packages\\system.diagnostics.tools\\4.0.1\\system.diagnostics.tools.4.0.1.nupkg.sha512",
+    "C:\\Users\\alicj\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Users\\alicj\\.nuget\\packages\\system.dynamic.runtime\\4.0.11\\system.dynamic.runtime.4.0.11.nupkg.sha512",
     "C:\\Users\\alicj\\.nuget\\packages\\system.globalization\\4.0.11\\system.globalization.4.0.11.nupkg.sha512",
     "C:\\Users\\alicj\\.nuget\\packages\\system.io\\4.1.0\\system.io.4.1.0.nupkg.sha512",

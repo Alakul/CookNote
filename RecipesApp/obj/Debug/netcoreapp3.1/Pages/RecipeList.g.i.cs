@@ -93,7 +93,7 @@ namespace RecipesApp.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/RecipesApp;component/pages/recipelist.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/RecipesApp;V1.0.0.0;component/pages/recipelist.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\RecipeList.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -56,3 +56,11 @@ C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Dictio
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Templates\FormTemplate.g.cs
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Templates\FormTemplate.baml
 C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Dictionaries\TemplatesDictionary.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\PdfSharp.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\PdfSharp.pdb
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\de\PdfSharp.resources.dll
