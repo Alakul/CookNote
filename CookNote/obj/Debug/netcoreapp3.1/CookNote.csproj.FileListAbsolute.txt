@@ -1,0 +1,188 @@
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\CookNote.exe
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\CookNote.deps.json
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\CookNote.runtimeconfig.json
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\CookNote.runtimeconfig.dev.json
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\CookNote.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\CookNote.pdb
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\SQLite-net.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\SQLiteNetExtensions.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\linux-mips64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Dictionaries\ComboBoxDictionary.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Dictionaries\ResourcesDictionary.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Dictionaries\TemplatesDictionary.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeFormAdd.g.cs
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeFormEdit.g.cs
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeList.g.cs
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeView.g.cs
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Templates\FormTemplate.g.cs
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Templates\MenuTemplate.g.cs
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\CookNote_MarkupCompile.cache
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\CookNote_MarkupCompile.lref
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeFormAdd.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeFormEdit.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeList.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Pages\RecipeView.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Templates\FormTemplate.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\Templates\MenuTemplate.baml
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\CookNote.g.resources
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\CookNote.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\CookNote.AssemblyInfoInputs.cache
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\CookNote.AssemblyInfo.cs
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\CookNote.csproj.CoreCompileInputs.cache
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\CookNote.csproj.CopyComplete
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\CookNote.dll
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\CookNote.pdb
+C:\Users\alicj\source\repos\RecipesApp\RecipesApp\obj\Debug\netcoreapp3.1\CookNote.genruntimeconfig.cache
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\CookNote.exe
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\CookNote.deps.json
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\CookNote.runtimeconfig.json
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\CookNote.runtimeconfig.dev.json
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\CookNote.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\CookNote.pdb
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\SQLite-net.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\SQLiteNetExtensions.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-mips64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\CookNote.csproj.AssemblyReference.cache
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Dictionaries\ComboBoxDictionary.baml
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Dictionaries\ResourcesDictionary.baml
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Dictionaries\TemplatesDictionary.baml
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeFormAdd.g.cs
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeFormEdit.g.cs
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeList.g.cs
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeView.g.cs
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Templates\FormTemplate.g.cs
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Templates\MenuTemplate.g.cs
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\CookNote_MarkupCompile.cache
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\CookNote_MarkupCompile.lref
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeFormAdd.baml
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeFormEdit.baml
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeList.baml
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeView.baml
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Templates\FormTemplate.baml
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\Templates\MenuTemplate.baml
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\CookNote.g.resources
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\CookNote.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\CookNote.AssemblyInfoInputs.cache
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\CookNote.AssemblyInfo.cs
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\CookNote.csproj.CoreCompileInputs.cache
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\CookNote.csproj.CopyComplete
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\CookNote.dll
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\CookNote.pdb
+C:\Users\alicj\source\repos\RecipesApp\CookNote\obj\Debug\netcoreapp3.1\CookNote.genruntimeconfig.cache
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\CookNote.exe
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\CookNote.deps.json
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\CookNote.runtimeconfig.json
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\CookNote.runtimeconfig.dev.json
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\CookNote.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\CookNote.pdb
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\SQLite-net.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\SQLiteNetExtensions.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-mips64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.csproj.AssemblyReference.cache
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Dictionaries\ComboBoxDictionary.baml
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Dictionaries\ResourcesDictionary.baml
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Dictionaries\TemplatesDictionary.baml
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeFormAdd.g.cs
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeFormEdit.g.cs
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeList.g.cs
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeView.g.cs
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Templates\FormTemplate.g.cs
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Templates\MenuTemplate.g.cs
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote_MarkupCompile.cache
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote_MarkupCompile.lref
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeFormAdd.baml
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeFormEdit.baml
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeList.baml
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Pages\RecipeView.baml
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Templates\FormTemplate.baml
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\Templates\MenuTemplate.baml
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.g.resources
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.AssemblyInfoInputs.cache
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.AssemblyInfo.cs
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.csproj.CoreCompileInputs.cache
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.csproj.CopyComplete
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.dll
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.pdb
+C:\Users\alicj\source\repos\WPF - CookNote\CookNote\obj\Debug\netcoreapp3.1\CookNote.genruntimeconfig.cache

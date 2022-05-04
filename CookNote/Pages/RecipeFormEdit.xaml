@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="CookNote.Pages.RecipeFormEdit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CookNote.Pages"
+             xmlns:tmpl="clr-namespace:CookNote.Templates"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <tmpl:MenuTemplate x:Name="menuControl" Grid.Row="0"></tmpl:MenuTemplate>
+        <tmpl:FormTemplate x:Name="formControl" Grid.Row="1" RecipeButton="EditRecipe" ImageButton="SelectFileButton" DeleteImageButton="DeleteFileButton"></tmpl:FormTemplate>
+    </Grid>
+</UserControl>

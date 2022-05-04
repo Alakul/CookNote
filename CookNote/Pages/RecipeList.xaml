@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="CookNote.Pages.RecipesList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CookNote.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Style="{StaticResource Border}" Background="{StaticResource PrimaryBrush}" Padding="20,10,20,10" Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource TextBlockMenu}">LISTA PRZEPISÓW</TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Style="{StaticResource ButtonMenu}" Click="AddRecipe">DODAJ PRZEPIS</Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <StackPanel Style="{StaticResource StackPanel}" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Style="{StaticResource TextBlockHorizontal}" HorizontalAlignment="Right" Grid.Column="0">Kategoria</TextBlock>
+                <ComboBox x:Name="category" Template="{StaticResource ComboBoxTemplate}" ItemContainerStyle="{StaticResource ComboBoxItem}" SelectionChanged="SelectionChange" Grid.Column="1"></ComboBox>
+
+                <TextBlock Style="{StaticResource TextBlockHorizontal}" HorizontalAlignment="Right" Grid.Column="3">Wyszukaj</TextBlock>
+                <TextBox x:Name="search" Style="{StaticResource TextBoxStyle}" Grid.Column="4" Grid.ColumnSpan="2"></TextBox>
+                <Button Style="{StaticResource Button}" Click="SearchForRecipes" Grid.Column="6">
+                    <Path x:Name="searchPath" Style="{StaticResource SearchPath}"/>
+                </Button>
+
+                <TextBlock Style="{StaticResource TextBlockHorizontal}" HorizontalAlignment="Right" Grid.Column="8">Sortuj</TextBlock>
+                <ComboBox x:Name="sort" Template="{StaticResource ComboBoxTemplate}" ItemContainerStyle="{StaticResource ComboBoxItem}" SelectionChanged="SortChange" Grid.Column="9"/>
+            </Grid>
+        </StackPanel>
+
+        <Border Padding="10,0,10,20" Grid.Row="2">
+            <ListView x:Name="recipesList" Height="415" ItemContainerStyle="{StaticResource ListViewItemStyle}" SelectedItem="{Binding Id}" ItemsSource="{Binding}" PreviewMouseLeftButtonUp="ListViewMouseLeftButtonDown" HorizontalContentAlignment="Stretch">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="0">
+                                <TextBlock FontSize="14" Padding="10,6,10,6" Text="{Binding Title}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" >
+                                <Button x:Name="editRecipe" Style="{StaticResource ButtonList}" Click="EditButton" Content="Edytuj"/>
+                                <Button x:Name="deleteFromList" Style="{StaticResource ButtonList}" Click="DeleteButton" Content="Usuń"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Border>
+    </Grid>
+</UserControl>
