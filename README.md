@@ -33,3 +33,8 @@ Project is created with:
     <img src="./Screenshots/AddRecipe.png" alt="Add recipe">
     <em>Add recipe</em>
 </p>
+</br>
+<p>
+    <img src="./Screenshots/ShowRecipe.png" alt="Recipe">
+    <em>Recipe</em>
+</p>
