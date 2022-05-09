@@ -55,7 +55,7 @@ namespace CookNote.Pages
                     SqliteDataAccess.UpdateRecipe(recipe);
                 }
                 else if (fileNameText != ""){
-                    recipe.Image = recipe.Id.ToString() + fileNameText.Substring(fileNameText.IndexOf('.'));
+                    recipe.Image = recipe.Id.ToString() + fileNameText.Substring(fileNameText.LastIndexOf('.'));
                     SqliteDataAccess.UpdateRecipe(recipe);
 
                     string fileName = recipe.Image;
