@@ -38,33 +38,39 @@ namespace CookNote.Pages
                 MessageBox.Show("Istnieje przepis o podanym tytule!");
             }
             else {
-                Recipe recipe = new Recipe()
-                {
-                    Title = formControl.title.Text.Trim(),
-                    Description = formControl.description.Text.Trim(),
-                    Ingredients = formControl.ingredients.Text.Trim(),
-                    Method = formControl.method.Text.Trim(),
-                    Category = formControl.category.SelectedItem.ToString(),
-                    Date = DateTime.Now
-                };
-                SqliteDataAccess.InsertRecipe(recipe);
-                string fileNameText = formControl.file.Text;
-
-                if (fileNameText == ""){
-                    recipe.Image = "";
-                    SqliteDataAccess.UpdateRecipe(recipe);
+                if (formControl.title.Text.Trim() == "" || formControl.ingredients.Text.Trim() == ""
+                    || formControl.method.Text.Trim() == "" || formControl.category.Text.Trim() == ""){
+                    MessageBox.Show("Uzupełnij wszystkie wymagane pola!");
                 }
-                else if (fileNameText != ""){
-                    recipe.Image = recipe.Id.ToString() + fileNameText.Substring(fileNameText.LastIndexOf('.'));
-                    SqliteDataAccess.UpdateRecipe(recipe);
+                else {
+                    Recipe recipe = new Recipe()
+                    {
+                        Title = formControl.title.Text.Trim(),
+                        Description = formControl.description.Text.Trim(),
+                        Ingredients = formControl.ingredients.Text.Trim(),
+                        Method = formControl.method.Text.Trim(),
+                        Category = formControl.category.SelectedItem.ToString(),
+                        Date = DateTime.Now
+                    };
+                    SqliteDataAccess.InsertRecipe(recipe);
+                    string fileNameText = formControl.file.Text;
 
-                    string fileName = recipe.Image;
-                    string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
-                    Directory.CreateDirectory(imageFolder);
-                    string destinationPath = System.IO.Path.Combine(imageFolder, fileName);
-                    File.Copy(fileNameFull, destinationPath);
+                    if (fileNameText == ""){
+                        recipe.Image = "";
+                        SqliteDataAccess.UpdateRecipe(recipe);
+                    }
+                    else if (fileNameText != ""){
+                        recipe.Image = recipe.Id.ToString() + fileNameText.Substring(fileNameText.LastIndexOf('.'));
+                        SqliteDataAccess.UpdateRecipe(recipe);
+
+                        string fileName = recipe.Image;
+                        string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                        Directory.CreateDirectory(imageFolder);
+                        string destinationPath = System.IO.Path.Combine(imageFolder, fileName);
+                        File.Copy(fileNameFull, destinationPath);
+                    }
+                    MessageBox.Show("Pomyślnie dodano przepis.");
                 }
-                MessageBox.Show("Pomyślnie dodano przepis.");
             }
         }
 

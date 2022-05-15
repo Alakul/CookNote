@@ -84,49 +84,55 @@ namespace CookNote.Pages
                 MessageBox.Show("Istnieje przepis o podanym tytule!");
             }
             else {
-                recipeValue.Title = formControl.title.Text.Trim();
-                recipeValue.Description = formControl.description.Text.Trim();
-                recipeValue.Ingredients = formControl.ingredients.Text.Trim();
-                recipeValue.Method = formControl.method.Text.Trim();
-                recipeValue.Category = formControl.category.Text.Trim();
-                recipeValue.Date = DateTime.Now;
-
-                if (fileNameFull != ""){
-                    string fileNameText = formControl.file.Text;
-                    if (fileNameText != ""){
-                        string fileName = recipeValue.Id.ToString() + fileNameText.Substring(fileNameText.LastIndexOf('.'));
-
-                        string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
-                        Directory.CreateDirectory(imageFolder);
-                        string destinationPath = System.IO.Path.Combine(imageFolder, fileName);
-                        string path = System.IO.Path.Combine(imageFolder, recipeValue.Image);
-
-                        if (File.Exists(path) && destinationPath != path){
-                            File.Delete(path);
-                        }
-
-                        if (fileNameText != recipeValue.Image){
-                            File.Copy(fileNameFull, destinationPath, true);
-                        }
-
-                        recipeValue.Image = fileName;
-                    }
-                    else if (fileNameText == ""){
-                        recipeValue.Image = "";
-                    }
+                if (formControl.title.Text.Trim()=="" || formControl.ingredients.Text.Trim()==""
+                    || formControl.method.Text.Trim()=="" || formControl.category.Text.Trim()==""){
+                    MessageBox.Show("Uzupełnij wszystkie wymagane pola!");
                 }
-                else if (fileNameFull == ""){
-                    if (recipeValue.Image != ""){
-                        string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
-                        Directory.CreateDirectory(imageFolder);
-                        string destinationPath = System.IO.Path.Combine(imageFolder, recipeValue.Image);
-                        File.Delete(destinationPath);
+                else {
+                    recipeValue.Title = formControl.title.Text.Trim();
+                    recipeValue.Description = formControl.description.Text.Trim();
+                    recipeValue.Ingredients = formControl.ingredients.Text.Trim();
+                    recipeValue.Method = formControl.method.Text.Trim();
+                    recipeValue.Category = formControl.category.Text.Trim();
+                    recipeValue.Date = DateTime.Now;
 
-                        recipeValue.Image = "";
+                    if (fileNameFull != ""){
+                        string fileNameText = formControl.file.Text;
+                        if (fileNameText != ""){
+                            string fileName = recipeValue.Id.ToString() + fileNameText.Substring(fileNameText.LastIndexOf('.'));
+
+                            string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                            Directory.CreateDirectory(imageFolder);
+                            string destinationPath = System.IO.Path.Combine(imageFolder, fileName);
+                            string path = System.IO.Path.Combine(imageFolder, recipeValue.Image);
+
+                            if (File.Exists(path) && destinationPath != path){
+                                File.Delete(path);
+                            }
+
+                            if (fileNameText != recipeValue.Image){
+                                File.Copy(fileNameFull, destinationPath, true);
+                            }
+
+                            recipeValue.Image = fileName;
+                        }
+                        else if (fileNameText == ""){
+                            recipeValue.Image = "";
+                        }
                     }
+                    else if (fileNameFull == ""){
+                        if (recipeValue.Image != ""){
+                            string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                            Directory.CreateDirectory(imageFolder);
+                            string destinationPath = System.IO.Path.Combine(imageFolder, recipeValue.Image);
+                            File.Delete(destinationPath);
+
+                            recipeValue.Image = "";
+                        }
+                    }
+                    SqliteDataAccess.UpdateRecipe(recipeValue);
+                    MessageBox.Show("Pomyślnie edytowano przepis.");
                 }
-                SqliteDataAccess.UpdateRecipe(recipeValue);
-                MessageBox.Show("Pomyślnie edytowano przepis.");
             }
         }
 
