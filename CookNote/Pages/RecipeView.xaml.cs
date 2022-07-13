@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using CookNote.Models;
+using CookNote.Files;
 
 namespace CookNote.Pages
 {
@@ -41,13 +42,13 @@ namespace CookNote.Pages
             method.Text = recipeFull.Method;
 
             if (recipeFull.Image != ""){
-                string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                string imageFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
 
                 try {
                     BitmapImage bitmapImage = new BitmapImage();
                     bitmapImage.BeginInit();
                     bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-                    bitmapImage.UriSource = new Uri(System.IO.Path.Combine(imageFolder, recipeFull.Image));
+                    bitmapImage.UriSource = new Uri(Path.Combine(imageFolder, recipeFull.Image));
                     bitmapImage.EndInit();
 
                     image.Source = bitmapImage;
@@ -71,12 +72,13 @@ namespace CookNote.Pages
             if (MessageBox.Show("Czy na pewno usunąć?", "Usuwanie", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No){
             }
             else {
-                string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                string imageFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
                 Directory.CreateDirectory(imageFolder);
-                string destinationPath = System.IO.Path.Combine(imageFolder, recipeItem.Image);
+                string destinationPath = Path.Combine(imageFolder, recipeItem.Image);
                 image.Source = null;
-
-                File.Delete(destinationPath);
+                if (recipeItem.Image != ""){
+                    File.Delete(destinationPath);
+                }
 
                 SqliteDataAccess.DeleteRecipe(recipeItem);
                 Switcher.Switch(new RecipesList());
@@ -85,33 +87,8 @@ namespace CookNote.Pages
 
         private void SaveToTXTButton(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Text file|*.txt";
-            bool? result = saveFileDialog.ShowDialog();
-
-            if (result == true){
-                using (StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName, false))
-                {
-                    streamWriter.WriteLine(recipeItem.Title);
-                    streamWriter.WriteLine("");
-                    if (recipeItem.Description != ""){
-                        streamWriter.WriteLine(recipeItem.Description);
-                        streamWriter.WriteLine("");
-                    }
-                    streamWriter.WriteLine("Kategoria");
-                    streamWriter.WriteLine(recipeItem.Category);
-                    streamWriter.WriteLine("");
-
-                    streamWriter.WriteLine("Składniki");
-                    streamWriter.WriteLine(recipeItem.Ingredients);
-                    streamWriter.WriteLine("");
-
-                    streamWriter.WriteLine("Przygotowanie");
-                    streamWriter.WriteLine(recipeItem.Method);
-
-                    streamWriter.Close();
-                }
-            }
+            IFile iFile = new TextFile();
+            iFile.ShowFileDialog(recipeItem);
         }
     }
 }

@@ -42,13 +42,13 @@ namespace CookNote.Pages
             recipeViewModel.Method = recipeFull.Method;
 
             if (recipeFull.Image != ""){
-                string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                string imageFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
 
                 try {
                     BitmapImage bitmapImage = new BitmapImage();
                     bitmapImage.BeginInit();
                     bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-                    bitmapImage.UriSource = new Uri(System.IO.Path.Combine(imageFolder, recipeFull.Image));
+                    bitmapImage.UriSource = new Uri(Path.Combine(imageFolder, recipeFull.Image));
                     bitmapImage.EndInit();
 
                     formControl.image.Source = bitmapImage;
@@ -101,10 +101,10 @@ namespace CookNote.Pages
                         if (fileNameText != ""){
                             string fileName = recipeValue.Id.ToString() + fileNameText.Substring(fileNameText.LastIndexOf('.'));
 
-                            string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                            string imageFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
                             Directory.CreateDirectory(imageFolder);
-                            string destinationPath = System.IO.Path.Combine(imageFolder, fileName);
-                            string path = System.IO.Path.Combine(imageFolder, recipeValue.Image);
+                            string destinationPath = Path.Combine(imageFolder, fileName);
+                            string path = Path.Combine(imageFolder, recipeValue.Image);
 
                             if (File.Exists(path) && destinationPath != path){
                                 File.Delete(path);
@@ -122,9 +122,9 @@ namespace CookNote.Pages
                     }
                     else if (fileNameFull == ""){
                         if (recipeValue.Image != ""){
-                            string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                            string imageFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
                             Directory.CreateDirectory(imageFolder);
-                            string destinationPath = System.IO.Path.Combine(imageFolder, recipeValue.Image);
+                            string destinationPath = Path.Combine(imageFolder, recipeValue.Image);
                             File.Delete(destinationPath);
 
                             recipeValue.Image = "";

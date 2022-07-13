@@ -53,8 +53,7 @@ namespace CookNote.Pages
         {
             Button button = (Button)sender;
             Recipe item = button.DataContext as Recipe;
-            if (item != null)
-            {
+            if (item != null){
                 Switcher.Switch(new RecipeFormEdit(item));
             }
         }
@@ -76,11 +75,10 @@ namespace CookNote.Pages
                 Button button = (Button)sender;
                 Recipe item = button.DataContext as Recipe;
 
-                if (item.Image != "")
-                {
-                    string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                if (item.Image != ""){
+                    string imageFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
                     Directory.CreateDirectory(imageFolder);
-                    string destinationPath = System.IO.Path.Combine(imageFolder, item.Image);
+                    string destinationPath = Path.Combine(imageFolder, item.Image);
                     File.Delete(destinationPath);
                 }
                 SqliteDataAccess.DeleteRecipe(item);

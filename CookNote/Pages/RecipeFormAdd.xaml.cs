@@ -64,9 +64,9 @@ namespace CookNote.Pages
                         SqliteDataAccess.UpdateRecipe(recipe);
 
                         string fileName = recipe.Image;
-                        string imageFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
+                        string imageFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
                         Directory.CreateDirectory(imageFolder);
-                        string destinationPath = System.IO.Path.Combine(imageFolder, fileName);
+                        string destinationPath = Path.Combine(imageFolder, fileName);
                         File.Copy(fileNameFull, destinationPath);
                     }
                     MessageBox.Show("Pomyślnie dodano przepis.");
