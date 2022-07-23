@@ -12,14 +12,16 @@ namespace CookNote.Pages
     public partial class RecipeView : UserControl
     {
         private Recipe recipeItem;
-
+        FileContext fileContext;
         public RecipeView(Recipe recipe)
         {
             InitializeComponent();
 
             SetMenuTemplate();
             SetRecipeValues(recipe);
+
             recipeItem = recipe;
+            fileContext = new FileContext();
         }
 
         private void SetMenuTemplate()
@@ -87,8 +89,8 @@ namespace CookNote.Pages
 
         private void SaveToTXTButton(object sender, RoutedEventArgs e)
         {
-            IFile iFile = new TextFile();
-            iFile.ShowFileDialog(recipeItem);
+            fileContext.SetFileType(FileEnum.Types.Text);
+            fileContext.SaveFile(recipeItem);
         }
     }
 }
