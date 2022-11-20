@@ -6,9 +6,15 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Dictionaries/ResourcesDictionary.xaml"/>
+                <ResourceDictionary Source="Dictionaries/MainDictionary.xaml"/>
+                <ResourceDictionary Source="Dictionaries/HeaderDictionary.xaml"/>
                 <ResourceDictionary Source="Dictionaries/ComboBoxDictionary.xaml"/>
-                <ResourceDictionary Source="Dictionaries/TemplatesDictionary.xaml"/>
+                
+                <ResourceDictionary Source="Dictionaries/IconDictionary.xaml"/>
+                <ResourceDictionary Source="Dictionaries/MessageBoxDictionary.xaml"/>
+                <ResourceDictionary Source="Dictionaries/ViewDictionary.xaml"/>
+                <ResourceDictionary Source="Dictionaries/MenuDictionary.xaml"/>
+                <ResourceDictionary Source="Dictionaries/FormDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

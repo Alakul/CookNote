@@ -7,20 +7,36 @@ using CookNote.Models;
 
 namespace CookNote.Pages
 {
-    public partial class RecipesList : UserControl
+    public partial class RecipesListPage : UserControl
     {
         string categoryName;
         string orderValue;
         string orderType;
         string searchValue;
 
-        public RecipesList()
+        public RecipesListPage()
         {
             InitializeComponent();
 
             SetComboBoxValues();
             SetValues();
             RecipesToList();
+
+            menuControl.backButton.AddHandler(Border.MouseDownEvent, new RoutedEventHandler(BackButton));
+            menuControl.header.Text = "LISTA PRZEPISÓW";
+
+            menuControl.buttonRight.AddHandler(Button.ClickEvent, new RoutedEventHandler(AddFormkButton));
+            menuControl.buttonRight.Content = "DODAJ PRZEPIS";
+        }
+
+        private void BackButton(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new MainMenuPage());
+        }
+
+        private void AddFormkButton(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new RecipeAddPage());
         }
 
         private void SetComboBoxValues()
@@ -40,13 +56,12 @@ namespace CookNote.Pages
             searchValue = "";
             categoryName = "";
             orderValue = "title";
-            orderType = "ascending";
-            
+            orderType = "ascending";         
         }
 
         private void AddRecipeButton(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new RecipeFormAdd());
+            Switcher.Switch(new RecipeAddPage());
         }
 
         private void EditButton(object sender, RoutedEventArgs e)
@@ -54,7 +69,7 @@ namespace CookNote.Pages
             Button button = (Button)sender;
             Recipe item = button.DataContext as Recipe;
             if (item != null){
-                Switcher.Switch(new RecipeFormEdit(item));
+                Switcher.Switch(new RecipeEditPage(item));
             }
         }
 
@@ -63,15 +78,13 @@ namespace CookNote.Pages
             object item = (sender as ListView).SelectedItem;
             Recipe recipeItem = (Recipe)item;
             if (item != null){
-                Switcher.Switch(new RecipeView(recipeItem));
+                Switcher.Switch(new RecipePage(recipeItem));
             }
         }
 
         private void DeleteButton(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Czy na pewno usunąć?", "Usuwanie", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No){      
-            }
-            else {
+            if (CustomMessageBox.CustomMessageBox.ShowWithCancel("Czy na pewno usunąć?", "Ta akcja jest nieodwracalna", "Usuwanie przepisu") == MessageBoxResult.OK){      
                 Button button = (Button)sender;
                 Recipe item = button.DataContext as Recipe;
 
@@ -131,11 +144,6 @@ namespace CookNote.Pages
         {
             searchValue = search.Text;
             RecipesToList();
-        }
-
-        private void BackButton(object sender, RoutedEventArgs e)
-        {
-            Switcher.Switch(new MainMenu());
         }
     }
 }

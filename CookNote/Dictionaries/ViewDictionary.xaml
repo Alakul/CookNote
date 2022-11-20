@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="BorderFooterView" TargetType="{x:Type Border}">
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Gray3}"/>
+        <Setter Property="BorderThickness" Value="0,1,0,0"/>
+    </Style>
+    
+    <Style x:Key="ButtonFooterView" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonList}">
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="Padding" Value="8,10,8,10"/>
+        <Setter Property="Foreground" Value="{StaticResource Gray1}"/>
+        <Setter Property="FontFamily" Value="Gluten"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource PrimaryLightLight}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="BorderView" TargetType="{x:Type Border}">
+        <Setter Property="Padding" Value="15"/>
+    </Style>
+    
+    <Style x:Key="StackPanelView" TargetType="{x:Type StackPanel}">
+        <Setter Property="Margin" Value="0,10,0,10"/>
+    </Style>
+
+    <Style x:Key="TextBlockView" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="Itim"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="TextAlignment" Value="Justify"/>
+    </Style>
+    <Style x:Key="TextBlockTitleView" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource Gray1}"/>
+        <Setter Property="FontFamily" Value="Itim"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Margin" Value="5,0,0,5"/>
+    </Style>
+    <Style x:Key="TextBlockLabelView" BasedOn="{StaticResource TextBlockTitleView}" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Margin" Value="0,0,0,5"/>
+    </Style>
+    
+</ResourceDictionary>

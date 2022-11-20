@@ -4,14 +4,14 @@ using System.Windows.Controls;
 
 namespace CookNote.Templates
 {
-    public partial class FormTemplate : UserControl
+    public partial class Form : UserControl
     {
         public delegate void MyControlClickEvent(object sender, RoutedEventArgs e);
         public event MyControlClickEvent RecipeButton;
         public event MyControlClickEvent ImageButton;
         public event MyControlClickEvent DeleteImageButton;
 
-        public FormTemplate()
+        public Form()
         {
             InitializeComponent();
 

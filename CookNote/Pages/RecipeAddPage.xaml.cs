@@ -8,11 +8,11 @@ using CookNote.Models;
 
 namespace CookNote.Pages
 {
-    public partial class RecipeFormAdd : UserControl
+    public partial class RecipeAddPage : UserControl
     {
         string fileNameFull;
 
-        public RecipeFormAdd()
+        public RecipeAddPage()
         {
             InitializeComponent();
 
@@ -28,19 +28,25 @@ namespace CookNote.Pages
 
         private void SetValues()
         {
+            menuControl.backButton.AddHandler(Border.MouseDownEvent, new RoutedEventHandler(BackButton));
             menuControl.header.Text = "DODAJ PRZEPIS";
             formControl.actionButton.Content = "DODAJ PRZEPIS";
+        }
+
+        private void BackButton(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new RecipesListPage());
         }
 
         private void AddRecipe(object sender, RoutedEventArgs e)
         {
             if (SqliteDataAccess.CheckForRecipes(formControl.title.Text.Trim())!=0) {
-                MessageBox.Show("Istnieje przepis o podanym tytule!");
+                CustomMessageBox.CustomMessageBox.Show("Istnieje przepis o podanym tytule!", "", "Komunikat");
             }
             else {
                 if (formControl.title.Text.Trim() == "" || formControl.ingredients.Text.Trim() == ""
                     || formControl.method.Text.Trim() == "" || formControl.category.Text.Trim() == ""){
-                    MessageBox.Show("Uzupełnij wszystkie wymagane pola!");
+                    CustomMessageBox.CustomMessageBox.Show("Uzupełnij wszystkie wymagane pola!", "", "Komunikat");
                 }
                 else {
                     Recipe recipe = new Recipe()
@@ -69,7 +75,7 @@ namespace CookNote.Pages
                         string destinationPath = Path.Combine(imageFolder, fileName);
                         File.Copy(fileNameFull, destinationPath);
                     }
-                    MessageBox.Show("Pomyślnie dodano przepis.");
+                    CustomMessageBox.CustomMessageBox.ShowNoWarning("Pomyślnie dodano przepis.", "", "Komunikat");
                 }
             }
         }

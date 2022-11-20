@@ -9,13 +9,13 @@ using CookNote.Models;
 
 namespace CookNote.Pages
 {
-    public partial class RecipeFormEdit : UserControl
+    public partial class RecipeEditPage : UserControl
     {
         RecipeViewModel recipeViewModel;
         Recipe recipeValue;
         string fileNameFull;
 
-        public RecipeFormEdit(Recipe recipe)
+        public RecipeEditPage(Recipe recipe)
         {
             InitializeComponent();
 
@@ -26,8 +26,14 @@ namespace CookNote.Pages
 
         private void SetValues()
         {
+            menuControl.backButton.AddHandler(Border.MouseDownEvent, new RoutedEventHandler(BackButton));
             menuControl.header.Text = "EDYTUJ PRZEPIS";
             formControl.actionButton.Content = "EDYTUJ PRZEPIS";
+        }
+
+        private void BackButton(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new RecipesListPage());
         }
 
         private void SetViewModel(Recipe recipe)
@@ -81,12 +87,12 @@ namespace CookNote.Pages
         private void EditRecipe(object sender, RoutedEventArgs e)
         {
             if (recipeValue.Title != formControl.title.Text.Trim() && SqliteDataAccess.CheckForRecipes(formControl.title.Text.Trim()) != 0){
-                MessageBox.Show("Istnieje przepis o podanym tytule!");
+                CustomMessageBox.CustomMessageBox.Show("Istnieje przepis o podanym tytule!","", "Komunikat");
             }
             else {
                 if (formControl.title.Text.Trim()=="" || formControl.ingredients.Text.Trim()==""
                     || formControl.method.Text.Trim()=="" || formControl.category.Text.Trim()==""){
-                    MessageBox.Show("Uzupełnij wszystkie wymagane pola!");
+                    CustomMessageBox.CustomMessageBox.Show("Uzupełnij wszystkie wymagane pola!", "", "Komunikat");
                 }
                 else {
                     recipeValue.Title = formControl.title.Text.Trim();
@@ -131,7 +137,7 @@ namespace CookNote.Pages
                         }
                     }
                     SqliteDataAccess.UpdateRecipe(recipeValue);
-                    MessageBox.Show("Pomyślnie edytowano przepis.");
+                    CustomMessageBox.CustomMessageBox.ShowNoWarning("Pomyślnie edytowano przepis.", "", "Komunikat");
                 }
             }
         }

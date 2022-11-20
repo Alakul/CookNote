@@ -4,16 +4,16 @@ using System.Windows.Controls;
 
 namespace CookNote.Templates
 {
-    public partial class MenuTemplate : UserControl
+    public partial class Header : UserControl
     {
-        public MenuTemplate()
+        public Header()
         {
             InitializeComponent();
         }
 
         private void BackButton(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new RecipesList());
+            Switcher.Switch(new RecipesListPage());
         }
     }
 }

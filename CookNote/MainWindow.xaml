@@ -3,12 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:CookNote.Templates"
         xmlns:local="clr-namespace:CookNote"
         mc:Ignorable="d"
         Title="CookNote" Height="550" Width="800"
-        Background="{StaticResource BackgroundBrush}" ResizeMode="NoResize">
-    
-    <StackPanel>
-        <ContentControl x:Name="contentControl"/>
-    </StackPanel>
+        WindowStyle="None" ResizeMode="NoResize"
+        Background="{StaticResource Background}">
+
+    <Border BorderThickness="1" BorderBrush="{StaticResource PrimaryDark}">
+        <DockPanel>
+            <uc:MainMenu DockPanel.Dock="Top" MouseLeftButtonDown="Drag_MouseLeftButtonDown" MouseLeftButtonUp="Drag_MouseLeftButtonUp" MouseMove="Drag_MouseMove"/>
+            <ContentControl x:Name="contentControl"/>
+        </DockPanel>
+    </Border>
 </Window>

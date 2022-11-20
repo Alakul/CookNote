@@ -7,25 +7,31 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Pages\MainMenu.xaml.cs">
+    <Compile Update="CustomMessageBox\MessageBoxWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\RecipeFormEdit.xaml.cs">
+    <Compile Update="Pages\MainMenuPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Templates\FormTemplate.xaml.cs">
+    <Compile Update="Pages\RecipeEditPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\RecipeFormAdd.xaml.cs">
+    <Compile Update="Templates\Form.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\RecipeList.xaml.cs">
+    <Compile Update="Pages\RecipeAddPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\RecipeView.xaml.cs">
+    <Compile Update="Pages\RecipeListPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Templates\MenuTemplate.xaml.cs">
+    <Compile Update="Pages\RecipePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Templates\MainMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Templates\Header.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -33,34 +39,55 @@
     <Page Update="Dictionaries\ComboBoxDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Dictionaries\TemplatesDictionary.xaml">
+    <Page Update="Dictionaries\FormDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dictionaries\IconDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dictionaries\HeaderDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dictionaries\MenuDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dictionaries\MessageBoxDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dictionaries\ViewDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\MainMenu.xaml">
+    <Page Update="CustomMessageBox\MessageBoxWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\RecipeFormEdit.xaml">
+    <Page Update="Pages\MainMenuPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Templates\FormTemplate.xaml">
+    <Page Update="Pages\RecipeEditPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\RecipeFormAdd.xaml">
+    <Page Update="Templates\Form.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\RecipeList.xaml">
+    <Page Update="Pages\RecipeAddPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\RecipeView.xaml">
+    <Page Update="Pages\RecipeListPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Dictionaries\ResourcesDictionary.xaml">
+    <Page Update="Pages\RecipePage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Templates\MenuTemplate.xaml">
+    <Page Update="Dictionaries\MainDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\MainMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\Header.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

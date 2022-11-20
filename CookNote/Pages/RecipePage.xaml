@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="CookNote.Pages.RecipePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CookNote.Pages"
+             xmlns:tmpl="clr-namespace:CookNote.Templates"
+             mc:Ignorable="d" 
+             d:DesignHeight="564" d:DesignWidth="800" Background="{StaticResource Background}">
+    
+    <Grid x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <tmpl:Header x:Name="menuControl" Grid.Row="0"/>
+
+        <Border Style="{StaticResource BorderView}" Grid.Row="1">
+            <ScrollViewer>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Background="White" BorderBrush="{StaticResource Gray3}" BorderThickness="1" Padding="25" Grid.Column="1">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock x:Name="title" Style="{StaticResource TextBlockTitleView}" HorizontalAlignment="Center" FontSize="18">Tytuł</TextBlock>
+
+                            <StackPanel x:Name="descriptionStackPanel" Style="{StaticResource StackPanelView}">
+                                <TextBlock x:Name="description" Style="{StaticResource TextBlockView}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis dignissim est, a vestibulum quam ullamcorper ornare. Morbi eu</TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Style="{StaticResource StackPanelView}">
+                                <TextBlock Style="{StaticResource TextBlockLabelView}">Kategoria</TextBlock>
+                                <TextBlock x:Name="category" Style="{StaticResource TextBlockView}">Kategoria</TextBlock>
+                            </StackPanel>
+
+                            <Image x:Name="image" Grid.Column="1"/>
+
+                            <StackPanel Style="{StaticResource StackPanelView}" Grid.Row="1" Grid.Column="0">
+                                <TextBlock Style="{StaticResource TextBlockLabelView}" Text="Składniki"/>
+                                <TextBlock x:Name="ingredients" Style="{StaticResource TextBlockView}">Składniki</TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Style="{StaticResource StackPanelView}" Grid.Row="1" Grid.Column="1">
+                                <TextBlock Style="{StaticResource TextBlockLabelView}" Text="Przygotowanie"/>
+                                <TextBlock x:Name="method" Style="{StaticResource TextBlockView}">Przygotowanie</TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </ScrollViewer>
+        </Border>
+
+        <Border Style="{StaticResource BorderFooterView}" Grid.Row="2">
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Button Style="{StaticResource ButtonFooterView}" Click="SaveToTXTButton">
+                    <StackPanel Orientation="Horizontal">
+                        <Viewbox Height="13" Margin="0,0,5,0">
+                            <Control Template="{StaticResource ExportIcon}"/>
+                        </Viewbox>
+                        <TextBlock>Eksportuj do pliku TXT</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Visibility="Collapsed" Style="{StaticResource ButtonFooterView}">Zapisz do PDF</Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

@@ -41,7 +41,7 @@ namespace CookNote.Files
 
                     streamWriter.Close();
                 }
-                MessageBox.Show("Pomyślnie zapisano do pliku.");
+                CustomMessageBox.CustomMessageBox.ShowNoWarning("Pomyślnie zapisano do pliku.", "", "Komunikat");
             }
         }
     }

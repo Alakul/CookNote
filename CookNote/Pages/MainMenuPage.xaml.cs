@@ -3,21 +3,21 @@ using System.Windows.Controls;
 
 namespace CookNote.Pages
 {
-    public partial class MainMenu : UserControl
+    public partial class MainMenuPage : UserControl
     {
-        public MainMenu()
+        public MainMenuPage()
         {
             InitializeComponent();
         }
 
         private void RecipeListViewButton(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new RecipesList());
+            Switcher.Switch(new RecipesListPage());
         }
 
         private void AuthorButton(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Autor: Alicja Kulig");
+            CustomMessageBox.CustomMessageBox.ShowNoWarning("Autor: Alicja Kulig", "", "");
         }
 
         private void CloseButton(object sender, RoutedEventArgs e)

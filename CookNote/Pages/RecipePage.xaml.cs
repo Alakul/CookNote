@@ -9,11 +9,11 @@ using CookNote.Files;
 
 namespace CookNote.Pages
 {
-    public partial class RecipeView : UserControl
+    public partial class RecipePage : UserControl
     {
         private Recipe recipeItem;
         FileContext fileContext;
-        public RecipeView(Recipe recipe)
+        public RecipePage(Recipe recipe)
         {
             InitializeComponent();
 
@@ -26,7 +26,24 @@ namespace CookNote.Pages
 
         private void SetMenuTemplate()
         {
+            menuControl.backButton.AddHandler(Border.MouseDownEvent, new RoutedEventHandler(BackButton));
             menuControl.header.Text = "PRZEPIS";
+
+            menuControl.buttonRight.AddHandler(Button.ClickEvent, new RoutedEventHandler(DeleteButton));
+            menuControl.buttonRight.Content = "USUŃ";
+
+            menuControl.buttonLeft.AddHandler(Button.ClickEvent, new RoutedEventHandler(EditFormButton));
+            menuControl.buttonLeft.Content = "EDYTUJ";
+        }
+
+        private void BackButton(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new RecipesListPage());
+        }
+
+        private void EditFormButton(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new RecipeEditPage(recipeItem));
         }
 
         private void SetRecipeValues(Recipe recipe)
@@ -54,26 +71,22 @@ namespace CookNote.Pages
                     bitmapImage.EndInit();
 
                     image.Source = bitmapImage;
+                    image.Margin = new Thickness(0, 10, 0, 10);
                 }
                 catch (FileNotFoundException){
                     image.Source = null;
+                    image.Margin = new Thickness(0, 0, 0, 0);
                 }
                 catch (DirectoryNotFoundException){
                     image.Source = null;
+                    image.Margin = new Thickness(0, 0, 0, 0);
                 }
             }
-        }
-
-        private void EditButton(object sender, RoutedEventArgs e)
-        {
-            Switcher.Switch(new RecipeFormEdit(recipeItem));
         }
 
         private void DeleteButton(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Czy na pewno usunąć?", "Usuwanie", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No){
-            }
-            else {
+            if (CustomMessageBox.CustomMessageBox.ShowWithCancel("Czy na pewno usunąć?", "Ta akcja jest nieodwracalna", "Usuwanie przepisu") == MessageBoxResult.OK){
                 string imageFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images");
                 Directory.CreateDirectory(imageFolder);
                 string destinationPath = Path.Combine(imageFolder, recipeItem.Image);
@@ -83,7 +96,7 @@ namespace CookNote.Pages
                 }
 
                 SqliteDataAccess.DeleteRecipe(recipeItem);
-                Switcher.Switch(new RecipesList());
+                Switcher.Switch(new RecipesListPage());
             }
         }
 
